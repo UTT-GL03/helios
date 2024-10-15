@@ -20,11 +20,11 @@ Météo France est un établissement public à caractère administratif ([source
 L'histoire des prévisions météoroligiques est relativement jeune et connait son avènement avec l'informatique et les satellites. Avant le Web c'est via la presse écrite et la radio que les prévisions étaient communiquées.
 Désormais c'est via des applications mobiles principalement qu'elle est diffusée. On en comptait plus de 10 000 en 2023 et ce nombre ne va cesser d'augmenter. Cependant l'énorme majorité des services se basent uniquement sur l'un des cinq modèles ouverts suivants :
 
-- Modèle européen ECMWF
-- Modèle américain GFS
-- Modèle français Arome (Méteo France)
-- Modèle français Arpège (Méteo France)
-- Modèle allemand Icon
+- Modèle européen ECMWF,
+- Modèle américain GFS,
+- Modèle français Arome (Méteo France),
+- Modèle français Arpège (Méteo France),
+- Modèle allemand Icon.
 
 ([source : Libération](https://www.liberation.fr/environnement/climat/face-a-meteo-france-des-concurrents-comme-sil-en-pleuvait-20240318_NKJTT4HMXJFERBRJYU2YHJVY3E/))
 
@@ -38,3 +38,19 @@ Notre premier axe de travail sera dirigé autour des publicités du site de mét
 Dans un second temps, nous souhaitons également enlever la grande majorité des articles en fin de page. Sur la page d'accueil du site, la seconde partie est uniquement constituée d'articles avec une image ou vidéo pour le présenter. Toujours dans la même optique, nous souhaitons rendre la page plus pertinente et moins énergivore en ne laissant qu'un article. De ce fait, l'utilisateur aura plus de chances également de s'intéresser s'il n'est pas submergé par la quantité. 
 Toujours pour les mêmes raisons, nous allons remplacer la carte de france qui est l'élément central de la page. Il sera possible par exemple de la remplacer par un tableau des températures et conditions météorologiques tout au long de la journée.
 Enfin, l'application se doit également d'être accessible et pertinente pour le plus grand nombre. Ainsi, nous ajouterons une partie professionnelle, notamment avec la météo agricole pour les utilisateurs qui auront besoin d'informations complémentaires et plus précises pour centraliser les informations dans un même endroit.
+
+
+## Scénario 1 : Consulter la météo
+1. L'utilisateur se rend sur un site de météo en ligne
+2. Il clique sur la météo de sa région
+3. Il scroll pour consulter la météo du lendemain et des jours prochains
+
+Les résultats de performance sont assez différents entre Météo France, Yr et la Météo Agricole. Météo France et la Météo Agricole ont beaucoup de pubs et de cookies qui alourdissent la page et augmente le réseau nécessaire.
+
+## Scénario 2 : Consulter des articles
+1. L'utilisateur se rend sur un site de météo en ligne
+2. Il clique sur un premier article 
+3. Il scroll pour consulter cet article
+4. Il clique sur un autre article
+5. Il scroll pour consulter ce 2e article
+6. Etc
