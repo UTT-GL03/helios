@@ -1,0 +1,33 @@
+- name: yr
+  url: https://www.yr.no/en
+
+  actions:
+    - name: Consulter la météo d'une ville (Oslo)
+      type: click
+      element: '#page-content > div:nth-child(3) > div > div:nth-child(2) > div > div:nth-child(2) > div > span.weather-location-list-item__location > h3 > a > span'
+      pageChange: true
+      timeoutBefore: 1000
+    - name: Consulter les prévisions méteo de la semaine
+      type: scroll
+- name: meteo-france
+  url: https://meteofrance.com
+
+  actions:
+    - name: Consulter la météo d'une région (Ile-de-France)
+      type: click
+      element: '#map > div.leaflet-pane.leaflet-map-pane > div.leaflet-pane.leaflet-marker-pane > div:nth-child(26) > a'
+      pageChange: true
+      timeoutBefore: 1000
+    - name: Consulter la meteo du lendemain
+      type: click
+      element: '#msc_tomorrow'
+- name: meteo-agricole
+  url: https://www.lameteoagricole.net/
+
+  actions: 
+    - name: Consulter la météo du lendemain
+      type: click
+      element: '#jours-table > thead > tr > th:nth-child(2) > div.th-inner > div > span.mt-2 > a'
+      pageChange: true
+    - name: Consulter les prévisions méteo de la semaine
+      type: scroll
