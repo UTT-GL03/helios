@@ -52,3 +52,43 @@ Les résultats de performance sont assez différents entre Météo France, Yr et
 2. Il choisit un des articles et le lit en entier.
 3. Il choisit un autre article à consulter parmi ceux présents en bas.
 4. Il le lit jusqu'au bout
+
+
+## Impact de l'exécution des scénarios auprès de différents services concurrents
+
+L'EcoIndex d'une page (de A à G) est calculé (sources : [EcoIndex](https://www.ecoindex.fr/comment-ca-marche/), [Octo](https://blog.octo.com/sous-le-capot-de-la-mesure-ecoindex), [GreenIT](https://github.com/cnumr/GreenIT-Analysis/blob/acc0334c712ba68939466c42af1514b5f448e19f/script/ecoIndex.js#L19-L44)) en fonction du positionnement de cette page parmi les pages mondiales concernant :
+
+- le nombre de requêtes lancées,
+- le poids des téléchargements,
+- le nombre d'éléments du document.
+
+Nous avons choisi de comparer l'impact des scénarios sur les services de quotidiens nationaux de diverses sensibilités politiques, économiques et environementales :
+
+- Météo France,
+- Yr,
+- Météo Agricole.
+
+Les résultats sont les suivants (attention, d'une journée à l'autre, on peut observer une certaine variabilité) :
+
+- Scénario "[Consulter la météo de ma région](https://htmlpreview.github.io/?https://raw.githubusercontent.com/UTT-GL03/helios/main/benchmark/consulterMeteo/results.html)",
+- Scénario "[Lire des articles parmi les articles de la page d'accueil](https://htmlpreview.github.io/?https://raw.githubusercontent.com/UTT-GL03/helios/main/benchmark/scenarioArticle/results.html)".
+
+## Maquette de l'interface et échantillon de données
+
+Au vu des différents services comparés, des exigences environnementales exprimées plus haut et des scénarios retenus, nous avons défini pour notre prototype une maquette de l'interface et un échantillon de données réalistes.
+
+L'interface retenue est composée de deux types de "pages Web" :
+
+- celle d'accueil, contenant la météo du jour des principales villes françaises,
+- celle qui donne plus d'informations sur la météo d'une zone donnée ("interface pro").
+
+![Maquette de la page d'accueil](./wireframe/FirstWireFrame.png)
+__Fig.1__: Maquette de l'interface d'accueil du prototype
+
+![Maquette de la page pro](./wireframe/ProPageWireFrame.png)
+__Fig.2__: Maquette de l'interface pro du prototype
+
+
+Pour des raisons de respect des droits d'auteurs, nous utilisons des données générées (avec [`dummy-json`](https://dummyjson.com)).
+Bien que fictives, ces données correspondent à la structure des services concurrents : 3 villes comportant la météo pourchacun (température, vent, météo) sur 7 jours (voir [modèle de données](./frontend/sample_data.hbs)). 
+Dans un objectif de sobriété environnementale, les articles sont limités à ceux du jour et de la veille.
