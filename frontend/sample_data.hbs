@@ -1,13 +1,46 @@
 {
-  "articles": [
-    {{#repeat min=20 max=30}}
+  "forecasts": [
     {
-      "section": "{{random 'France' 'International' 'Économie' 'Culture' 'Planète' 'Santé' 'Art de vivre' 'Sport'}}",
-      "issued": "{{date '2024-10-07' '2024-10-08' 'YYYY-MM-DD hh:mm'}}",
-      "creator": "{{firstName}} {{lastName}}",
-      "heading": "{{lorem min=3 max=20}}",
-      "content": "{{#repeat min=1 max=15 comma=false}}{{lorem min=5 max=120}}\n\n{{/repeat}}"
+      "city": "Paris",
+      "dailyForecasts": [
+        {{#repeat 7}}  
+        {
+          "date": "{{date '2024-10-15' '2024-10-21' 'YYYY-MM-DD'}}",  
+          "temperature": "{{int 5 35}}",  
+          "condition": "{{random 'Sunny' 'Rainy' 'Cloudy' 'Stormy' 'Snowy'}}",  
+          "windSpeed": "{{int 5 50}}",  
+          "humidity": "{{int 30 100}}%"  
+        }
+        {{/repeat}}
+      ]
+    },
+    {
+      "city": "Troyes",
+      "dailyForecasts": [
+        {{#repeat 7}}  
+        {
+          "date": "{{date '2024-10-15' '2024-10-21' 'YYYY-MM-DD'}}",
+          "temperature": "{{int 5 35}}",
+          "condition": "{{random 'Sunny' 'Rainy' 'Cloudy' 'Stormy' 'Snowy'}}",
+          "windSpeed": "{{int 5 50}}",
+          "humidity": "{{int 30 100}}%"
+        }
+        {{/repeat}}
+      ]
+    },
+    {
+      "city": "Strasbourg",
+      "dailyForecasts": [
+        {{#repeat 7}}  
+        {
+          "date": "{{date '2024-10-15' '2024-10-21' 'YYYY-MM-DD'}}",
+          "temperature": "{{int 5 35}}",
+          "condition": "{{random 'Sunny' 'Rainy' 'Cloudy' 'Stormy' 'Snowy'}}",
+          "windSpeed": "{{int 5 50}}",
+          "humidity": "{{int 30 100}}%"
+        }
+        {{/repeat}}
+      ]
     }
-    {{/repeat}}
   ]
 }
