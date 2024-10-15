@@ -41,16 +41,14 @@ Enfin, l'application se doit également d'être accessible et pertinente pour le
 
 
 ## Scénario 1 : Consulter la météo
-1. L'utilisateur se rend sur un site de météo en ligne
-2. Il clique sur la météo de sa région
-3. Il scroll pour consulter la météo du lendemain et des jours prochains
+1. L'utilisateur de météo en ligne se rend sur la page d'accueil grâce à un favori (donc sans passer par un moteur de recherche). Il cherche l'onglet météo de sa région.
+2. Il choisit de voir la météo de sa région.
+3. Il consulte la météo du lendemain et des jours prochains.
 
 Les résultats de performance sont assez différents entre Météo France, Yr et la Météo Agricole. Météo France et la Météo Agricole ont beaucoup de pubs et de cookies qui alourdissent la page et augmente le réseau nécessaire.
 
 ## Scénario 2 : Consulter des articles
-1. L'utilisateur se rend sur un site de météo en ligne
-2. Il clique sur un premier article 
-3. Il scroll pour consulter cet article
-4. Il clique sur un autre article
-5. Il scroll pour consulter ce 2e article
-6. Etc
+1. L'utilisateur de météo en ligne se rend sur la page d'accueil grâce à un favori (donc sans passer par un moteur de recherche). Il consulte les titres.
+2. Il choisit un des articles et le lit en entier.
+3. Il choisit un autre article à consulter parmi ceux présents en bas.
+4. Il le lit jusqu'au bout
