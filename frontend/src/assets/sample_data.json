@@ -1,0 +1,168 @@
+{
+    "forecasts": [
+      {
+        "city": "Paris",
+        "dailyForecasts": [
+          {
+            "date": "2024-10-17",  
+            "temperature": "23",  
+            "condition": "Sunny",  
+            "windSpeed": "39",  
+            "humidity": "61%"  
+          },
+          {
+            "date": "2024-10-15",  
+            "temperature": "11",  
+            "condition": "Rainy",  
+            "windSpeed": "5",  
+            "humidity": "99%"  
+          },
+          {
+            "date": "2024-10-20",  
+            "temperature": "21",  
+            "condition": "Cloudy",  
+            "windSpeed": "9",  
+            "humidity": "70%"  
+          },
+          {
+            "date": "2024-10-17",  
+            "temperature": "22",  
+            "condition": "Sunny",  
+            "windSpeed": "41",  
+            "humidity": "42%"  
+          },
+          {
+            "date": "2024-10-16",  
+            "temperature": "29",  
+            "condition": "Snowy",  
+            "windSpeed": "42",  
+            "humidity": "44%"  
+          },
+          {
+            "date": "2024-10-17",  
+            "temperature": "13",  
+            "condition": "Sunny",  
+            "windSpeed": "8",  
+            "humidity": "61%"  
+          },
+          {
+            "date": "2024-10-15",  
+            "temperature": "10",  
+            "condition": "Cloudy",  
+            "windSpeed": "40",  
+            "humidity": "54%"  
+          }
+        ]
+      },
+      {
+        "city": "Troyes",
+        "dailyForecasts": [
+          {
+            "date": "2024-10-16",
+            "temperature": "6",
+            "condition": "Snowy",
+            "windSpeed": "7",
+            "humidity": "58%"
+          },
+          {
+            "date": "2024-10-20",
+            "temperature": "25",
+            "condition": "Cloudy",
+            "windSpeed": "33",
+            "humidity": "50%"
+          },
+          {
+            "date": "2024-10-15",
+            "temperature": "11",
+            "condition": "Sunny",
+            "windSpeed": "11",
+            "humidity": "39%"
+          },
+          {
+            "date": "2024-10-16",
+            "temperature": "20",
+            "condition": "Cloudy",
+            "windSpeed": "26",
+            "humidity": "60%"
+          },
+          {
+            "date": "2024-10-17",
+            "temperature": "9",
+            "condition": "Cloudy",
+            "windSpeed": "26",
+            "humidity": "30%"
+          },
+          {
+            "date": "2024-10-17",
+            "temperature": "30",
+            "condition": "Stormy",
+            "windSpeed": "31",
+            "humidity": "90%"
+          },
+          {
+            "date": "2024-10-20",
+            "temperature": "5",
+            "condition": "Sunny",
+            "windSpeed": "18",
+            "humidity": "56%"
+          }
+        ]
+      },
+      {
+        "city": "Strasbourg",
+        "dailyForecasts": [
+          {
+            "date": "2024-10-16",
+            "temperature": "17",
+            "condition": "Snowy",
+            "windSpeed": "33",
+            "humidity": "46%"
+          },
+          {
+            "date": "2024-10-18",
+            "temperature": "10",
+            "condition": "Rainy",
+            "windSpeed": "31",
+            "humidity": "59%"
+          },
+          {
+            "date": "2024-10-20",
+            "temperature": "6",
+            "condition": "Cloudy",
+            "windSpeed": "9",
+            "humidity": "78%"
+          },
+          {
+            "date": "2024-10-18",
+            "temperature": "10",
+            "condition": "Cloudy",
+            "windSpeed": "37",
+            "humidity": "50%"
+          },
+          {
+            "date": "2024-10-19",
+            "temperature": "21",
+            "condition": "Rainy",
+            "windSpeed": "38",
+            "humidity": "90%"
+          },
+          {
+            "date": "2024-10-19",
+            "temperature": "26",
+            "condition": "Snowy",
+            "windSpeed": "18",
+            "humidity": "50%"
+          },
+          {
+            "date": "2024-10-19",
+            "temperature": "23",
+            "condition": "Snowy",
+            "windSpeed": "13",
+            "humidity": "41%"
+          }
+        ]
+      }
+    ]
+  }
+  
+  

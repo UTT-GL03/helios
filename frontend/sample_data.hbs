@@ -1,0 +1,46 @@
+{
+  "forecasts": [
+    {
+      "city": "Paris",
+      "dailyForecasts": [
+        {{#repeat 7}}  
+        {
+          "date": "{{date '2024-10-15' '2024-10-21' 'YYYY-MM-DD'}}",  
+          "temperature": "{{int 5 35}}",  
+          "condition": "{{random 'Sunny' 'Rainy' 'Cloudy' 'Stormy' 'Snowy'}}",  
+          "windSpeed": "{{int 5 50}}",  
+          "humidity": "{{int 30 100}}%"  
+        }
+        {{/repeat}}
+      ]
+    },
+    {
+      "city": "Troyes",
+      "dailyForecasts": [
+        {{#repeat 7}}  
+        {
+          "date": "{{date '2024-10-15' '2024-10-21' 'YYYY-MM-DD'}}",
+          "temperature": "{{int 5 35}}",
+          "condition": "{{random 'Sunny' 'Rainy' 'Cloudy' 'Stormy' 'Snowy'}}",
+          "windSpeed": "{{int 5 50}}",
+          "humidity": "{{int 30 100}}%"
+        }
+        {{/repeat}}
+      ]
+    },
+    {
+      "city": "Strasbourg",
+      "dailyForecasts": [
+        {{#repeat 7}}  
+        {
+          "date": "{{date '2024-10-15' '2024-10-21' 'YYYY-MM-DD'}}",
+          "temperature": "{{int 5 35}}",
+          "condition": "{{random 'Sunny' 'Rainy' 'Cloudy' 'Stormy' 'Snowy'}}",
+          "windSpeed": "{{int 5 50}}",
+          "humidity": "{{int 30 100}}%"
+        }
+        {{/repeat}}
+      ]
+    }
+  ]
+}
