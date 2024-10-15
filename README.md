@@ -71,7 +71,7 @@ Nous avons choisi de comparer l'impact des scénarios sur les services de quotid
 Les résultats sont les suivants (attention, d'une journée à l'autre, on peut observer une certaine variabilité) :
 
 - Scénario "[Consulter la météo de ma région](https://htmlpreview.github.io/?https://raw.githubusercontent.com/UTT-GL03/helios/main/benchmark/consulterMeteo/results.html)",
-- Scénario "[Lire des articles parmi les articles de la page d'accueil](https://htmlpreview.github.io/?https://raw.githubusercontent.com/UTT-GL03/helios/main/benchmark/scenarioArticle/results.html)".
+- Scénario "[Lire des articles parmi les articles de la page d'accueil](https://htmlpreview.github.io/?https://raw.githubusercontent.com/UTT-GL03/helios/main/benchmark/scenarioArticle/benchmark_.html)".
 
 ## Maquette de l'interface et échantillon de données
 
