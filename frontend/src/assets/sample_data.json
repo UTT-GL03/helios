@@ -1,168 +1,214 @@
 {
-    "forecasts": [
-      {
-        "city": "Paris",
-        "dailyForecasts": [
-          {
-            "date": "2024-10-17",  
-            "temperature": "23",  
-            "condition": "Sunny",  
-            "windSpeed": "39",  
-            "humidity": "61%"  
-          },
-          {
-            "date": "2024-10-15",  
-            "temperature": "11",  
-            "condition": "Rainy",  
-            "windSpeed": "5",  
-            "humidity": "99%"  
-          },
-          {
-            "date": "2024-10-20",  
-            "temperature": "21",  
-            "condition": "Cloudy",  
-            "windSpeed": "9",  
-            "humidity": "70%"  
-          },
-          {
-            "date": "2024-10-17",  
-            "temperature": "22",  
-            "condition": "Sunny",  
-            "windSpeed": "41",  
-            "humidity": "42%"  
-          },
-          {
-            "date": "2024-10-16",  
-            "temperature": "29",  
-            "condition": "Snowy",  
-            "windSpeed": "42",  
-            "humidity": "44%"  
-          },
-          {
-            "date": "2024-10-17",  
-            "temperature": "13",  
-            "condition": "Sunny",  
-            "windSpeed": "8",  
-            "humidity": "61%"  
-          },
-          {
-            "date": "2024-10-15",  
-            "temperature": "10",  
-            "condition": "Cloudy",  
-            "windSpeed": "40",  
-            "humidity": "54%"  
-          }
-        ]
-      },
-      {
-        "city": "Troyes",
-        "dailyForecasts": [
-          {
-            "date": "2024-10-16",
-            "temperature": "6",
-            "condition": "Snowy",
-            "windSpeed": "7",
-            "humidity": "58%"
-          },
-          {
-            "date": "2024-10-20",
-            "temperature": "25",
-            "condition": "Cloudy",
-            "windSpeed": "33",
-            "humidity": "50%"
-          },
-          {
-            "date": "2024-10-15",
-            "temperature": "11",
-            "condition": "Sunny",
-            "windSpeed": "11",
-            "humidity": "39%"
-          },
-          {
-            "date": "2024-10-16",
-            "temperature": "20",
-            "condition": "Cloudy",
-            "windSpeed": "26",
-            "humidity": "60%"
-          },
-          {
-            "date": "2024-10-17",
-            "temperature": "9",
-            "condition": "Cloudy",
-            "windSpeed": "26",
-            "humidity": "30%"
-          },
-          {
-            "date": "2024-10-17",
-            "temperature": "30",
-            "condition": "Stormy",
-            "windSpeed": "31",
-            "humidity": "90%"
-          },
-          {
-            "date": "2024-10-20",
-            "temperature": "5",
-            "condition": "Sunny",
-            "windSpeed": "18",
-            "humidity": "56%"
-          }
-        ]
-      },
-      {
-        "city": "Strasbourg",
-        "dailyForecasts": [
-          {
-            "date": "2024-10-16",
-            "temperature": "17",
-            "condition": "Snowy",
-            "windSpeed": "33",
-            "humidity": "46%"
-          },
-          {
-            "date": "2024-10-18",
-            "temperature": "10",
-            "condition": "Rainy",
-            "windSpeed": "31",
-            "humidity": "59%"
-          },
-          {
-            "date": "2024-10-20",
-            "temperature": "6",
-            "condition": "Cloudy",
-            "windSpeed": "9",
-            "humidity": "78%"
-          },
-          {
-            "date": "2024-10-18",
-            "temperature": "10",
-            "condition": "Cloudy",
-            "windSpeed": "37",
-            "humidity": "50%"
-          },
-          {
-            "date": "2024-10-19",
-            "temperature": "21",
-            "condition": "Rainy",
-            "windSpeed": "38",
-            "humidity": "90%"
-          },
-          {
-            "date": "2024-10-19",
-            "temperature": "26",
-            "condition": "Snowy",
-            "windSpeed": "18",
-            "humidity": "50%"
-          },
-          {
-            "date": "2024-10-19",
-            "temperature": "23",
-            "condition": "Snowy",
-            "windSpeed": "13",
-            "humidity": "41%"
-          }
-        ]
-      }
-    ]
-  }
-  
-  
+  "forecasts": [
+    {
+      "city": "Paris",
+      "sunrise": "07:32",
+      "sunset": "18:45",
+      "dailyForecasts": [
+        {
+          "date": "2024-10-15",
+          "morningTemperature": "10",
+          "afternoonTemperature": "11",
+          "eveningTemperature": "10",
+          "condition": "Rainy",
+          "windSpeed": "5",
+          "humidity": "99%"
+        },
+        {
+          "date": "2024-10-16",
+          "morningTemperature": "20",
+          "afternoonTemperature": "29",
+          "eveningTemperature": "24",
+          "condition": "Snowy",
+          "windSpeed": "42",
+          "humidity": "44%"
+        },
+        {
+          "date": "2024-10-17",
+          "morningTemperature": "15",
+          "afternoonTemperature": "23",
+          "eveningTemperature": "18",
+          "condition": "Sunny",
+          "windSpeed": "39",
+          "humidity": "61%"
+        },
+        {
+          "date": "2024-10-18",
+          "morningTemperature": "14",
+          "afternoonTemperature": "22",
+          "eveningTemperature": "19",
+          "condition": "Cloudy",
+          "windSpeed": "20",
+          "humidity": "70%"
+        },
+        {
+          "date": "2024-10-19",
+          "morningTemperature": "16",
+          "afternoonTemperature": "25",
+          "eveningTemperature": "21",
+          "condition": "Sunny",
+          "windSpeed": "15",
+          "humidity": "55%"
+        },
+        {
+          "date": "2024-10-20",
+          "morningTemperature": "14",
+          "afternoonTemperature": "21",
+          "eveningTemperature": "19",
+          "condition": "Cloudy",
+          "windSpeed": "9",
+          "humidity": "70%"
+        },
+        {
+          "date": "2024-10-21",
+          "morningTemperature": "12",
+          "afternoonTemperature": "20",
+          "eveningTemperature": "16",
+          "condition": "Rainy",
+          "windSpeed": "12",
+          "humidity": "80%"
+        }
+      ]
+    },
+    {
+      "city": "Troyes",
+      "sunrise": "07:36",
+      "sunset": "18:39",
+      "dailyForecasts": [
+        {
+          "date": "2024-10-15",
+          "morningTemperature": "9",
+          "afternoonTemperature": "11",
+          "eveningTemperature": "10",
+          "condition": "Sunny",
+          "windSpeed": "11",
+          "humidity": "39%"
+        },
+        {
+          "date": "2024-10-16",
+          "morningTemperature": "4",
+          "afternoonTemperature": "6",
+          "eveningTemperature": "5",
+          "condition": "Snowy",
+          "windSpeed": "7",
+          "humidity": "58%"
+        },
+        {
+          "date": "2024-10-17",
+          "morningTemperature": "12",
+          "afternoonTemperature": "19",
+          "eveningTemperature": "15",
+          "condition": "Cloudy",
+          "windSpeed": "26",
+          "humidity": "60%"
+        },
+        {
+          "date": "2024-10-18",
+          "morningTemperature": "14",
+          "afternoonTemperature": "21",
+          "eveningTemperature": "17",
+          "condition": "Rainy",
+          "windSpeed": "20",
+          "humidity": "75%"
+        },
+        {
+          "date": "2024-10-19",
+          "morningTemperature": "18",
+          "afternoonTemperature": "23",
+          "eveningTemperature": "20",
+          "condition": "Sunny",
+          "windSpeed": "10",
+          "humidity": "52%"
+        },
+        {
+          "date": "2024-10-20",
+          "morningTemperature": "20",
+          "afternoonTemperature": "25",
+          "eveningTemperature": "22",
+          "condition": "Cloudy",
+          "windSpeed": "33",
+          "humidity": "50%"
+        },
+        {
+          "date": "2024-10-21",
+          "morningTemperature": "15",
+          "afternoonTemperature": "20",
+          "eveningTemperature": "16",
+          "condition": "Stormy",
+          "windSpeed": "28",
+          "humidity": "88%"
+        }
+      ]
+    },
+    {
+      "city": "Strasbourg",
+      "sunrise": "07:34",
+      "sunset": "18:38",
+      "dailyForecasts": [
+        {
+          "date": "2024-10-15",
+          "morningTemperature": "13",
+          "afternoonTemperature": "16",
+          "eveningTemperature": "14",
+          "condition": "Cloudy",
+          "windSpeed": "22",
+          "humidity": "55%"
+        },
+        {
+          "date": "2024-10-16",
+          "morningTemperature": "15",
+          "afternoonTemperature": "17",
+          "eveningTemperature": "16",
+          "condition": "Snowy",
+          "windSpeed": "33",
+          "humidity": "46%"
+        },
+        {
+          "date": "2024-10-17",
+          "morningTemperature": "8",
+          "afternoonTemperature": "13",
+          "eveningTemperature": "10",
+          "condition": "Sunny",
+          "windSpeed": "10",
+          "humidity": "49%"
+        },
+        {
+          "date": "2024-10-18",
+          "morningTemperature": "9",
+          "afternoonTemperature": "10",
+          "eveningTemperature": "10",
+          "condition": "Rainy",
+          "windSpeed": "31",
+          "humidity": "59%"
+        },
+        {
+          "date": "2024-10-19",
+          "morningTemperature": "16",
+          "afternoonTemperature": "21",
+          "eveningTemperature": "18",
+          "condition": "Cloudy",
+          "windSpeed": "12",
+          "humidity": "67%"
+        },
+        {
+          "date": "2024-10-20",
+          "morningTemperature": "12",
+          "afternoonTemperature": "15",
+          "eveningTemperature": "13",
+          "condition": "Cloudy",
+          "windSpeed": "14",
+          "humidity": "72%"
+        },
+        {
+          "date": "2024-10-21",
+          "morningTemperature": "10",
+          "afternoonTemperature": "12",
+          "eveningTemperature": "11",
+          "condition": "Rainy",
+          "windSpeed": "20",
+          "humidity": "82%"
+        }
+      ]
+    }
+  ]
+}

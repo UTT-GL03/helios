@@ -92,3 +92,15 @@ __Fig.2__: Maquette de l'interface pro du prototype
 Pour des raisons de respect des droits d'auteurs, nous utilisons des données générées (avec [`dummy-json`](https://dummyjson.com)).
 Bien que fictives, ces données correspondent à la structure des services concurrents : 3 villes comportant la météo pourchacun (température, vent, météo) sur 7 jours (voir [modèle de données](./frontend/sample_data.hbs)). 
 Dans un objectif de sobriété environnementale, les articles sont limités à ceux du jour et de la veille.
+
+
+## Prototype n°1 : Fonctionnalités pour le scénario prioritaire avec données statiques
+
+Pour cette première version du prototype :
+
+- l'échantillon de données est encore chargé dans le code de manière statique,
+- les fonctionnalités implémentées ne sont que celles nécessaires pour suivre le scénario prioritaire ("Consulter la météo").
+
+Ce scénario nécessite de pouvoir naviguer sur la page principale qui contient la météo du jour.
+
+### Page principale

@@ -40,3 +40,17 @@
 .read-the-docs {
   color: #888;
 }
+
+.WeatherTable{
+  border-color:#686767 ;
+  border: 1px solid;
+  padding: 30px;
+  margin-top: 25px ;
+  border-radius: 10px;
+}
+
+.CityWrapper{
+  margin: 5%;
+  margin-inline: auto;
+  align-self: center;
+}

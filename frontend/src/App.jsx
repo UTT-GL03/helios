@@ -1,33 +1,24 @@
-
-
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import reactLogo from './assets/favicon.svg'
+import Homepage from './Homepage'
+import ProPage from './ProPage'
 import './App.css'
- 
-import data from './assets/sample_data.json';
-function App() {
 
+function App() {
   return (
-    <>
-    <div>
-      <h1>Météo Forecast</h1>
-      {data.forecasts.map((forecast, index) => (
-        <div key={index}>
-          <h2>Ville: {forecast.city}</h2>
-          <h3>Prévisions quotidiennes:</h3>
-          <ul>
-            {forecast.dailyForecasts.map((dailyForecast, idx) => (
-              <li key={idx}>
-                Date: {dailyForecast.date} - Température: {dailyForecast.temperature}°C, 
-                Condition: {dailyForecast.condition}, 
-                Vitesse du vent: {dailyForecast.windSpeed} km/h, 
-                Humidité: {dailyForecast.humidity}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
-      
-    </>
+    <BrowserRouter>
+      <header>
+        <Link to="/">
+          <h1>
+            HELIOS
+          </h1>
+        </Link>
+      </header>
+      <Routes>
+        <Route path="/" element={<Homepage/>} />
+        <Route path="/pro" element={<ProPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
