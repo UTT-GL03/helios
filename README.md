@@ -130,3 +130,17 @@ Dans l'état actuel du prototype, il est possible d'avoir une première idée de
 | Mode "pré-production" | 93.06 A🟢 | 1,14 | 61 | 4 | 76 
 
 __Tab.1__: Évaluation de l'impact du prototype de la page d'accueil.
+
+
+
+
+Avec l'ajout de ce modèle de page et la mise en place de la navigation entre les deux modèles, il devient possible d'exécuter le scénario prioritaire complet et de mesurer son impact.
+
+|   | EcoIndex| GES (gCO2e) | Taille du DOM | Requêtes | Taille de la page (ko)
+|---|--------:|------------:|--------------:|---------:|---------------------:
+| 1. Consulter la météo des villes de l'acceuil 					   | 93.06 A🟢 |  1,14 | 61 | 4 | 76
+| 2. rechercher  une ville			   | 91.15 A🟢 | 1,77 | 97 | 4 | 102
+| 3. Revenir à l'acceuil | 91.15 A🟢 | 1,77 | 97 | 4 | 102
+
+
+__Fig.2__: Évaluation de l'impact du scénario "rechercher la météo d'une ville" dans le prototype n°1.
