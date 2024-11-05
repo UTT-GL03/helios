@@ -20,15 +20,14 @@ useEffect(() => {
     }, []);
 
 
-
     const handleSearch = (event) => {
-        if (event.key === 'Enter') {
+       
             const query = searchQuery.trim().toLowerCase();
             const result = data.forecasts.filter(forecast =>
                 forecast.city.toLowerCase().includes(query)
             );
             setFilteredData(result);
-        }
+        
     };
 
     return (
