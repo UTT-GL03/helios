@@ -1,26 +1,50 @@
-
+import React, { useState } from 'react';
 import './App.css';
 import data from './assets/sample_data.json';
 import Icon from '@mdi/react';
-import { mdiMenu } from '@mdi/js';
+import { mdiMenu, mdiWeatherSunny, mdiWeatherCloudy, mdiWeatherSnowyHeavy, mdiWeatherRainy } from '@mdi/js';
+import dayjs from 'dayjs';
 
 function Homepage() {
+    const [searchQuery, setSearchQuery] = useState('');
+    const [filteredData, setFilteredData] = useState(data.forecasts);
+
+    const handleSearch = (event) => {
+        if (event.key === 'Enter') {
+            const query = searchQuery.trim().toLowerCase();
+            const result = data.forecasts.filter(forecast =>
+                forecast.city.toLowerCase().includes(query)
+            );
+            setFilteredData(result);
+        }
+    };
+
     return (
         <>
-            <div className=''>
+            <div>
                 <nav className='NavBar'>
                     <ul>
-                        <button className='ProButton' onClick={event =>  window.location.href='/pro'} >
+                        <button className='ProButton' onClick={() => window.location.href = '/pro'}>
                             Pro +
                         </button>
                     </ul>
                     <ul>
-                        <button className='NavBarButton'><Icon path={mdiMenu} size={1} /></button>
+                        <button className='NavBarButton'>
+                            <Icon path={mdiMenu} size={1} />
+                        </button>
                     </ul>
                 </nav>
 
                 <div className='WeatherTable'>
-                    <input className='SeachBar' type="text" name="text" placeholder="Recherchez une ville..." aria-label="Text" />
+                    <input
+                        className='SearchBar'
+                        type="text"
+                        placeholder="Recherchez une ville..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        onKeyDown={handleSearch}
+                        aria-label="Recherchez une ville"
+                    />
                     <div className='CityWrapper'>
                         <table>
                             <thead>
@@ -29,25 +53,30 @@ function Homepage() {
                                     <th>Date</th>
                                     <th>Température MATIN (°C)</th>
                                     <th>Température APREM (°C)</th>
-                                    <th>Température SOIREE (°C)</th>
+                                    <th>Température SOIRÉE (°C)</th>
                                     <th>Condition</th>
                                     <th>Humidité</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {data.forecasts.map((forecast, index) => (
+                                {filteredData.map((forecast, index) => (
                                     forecast.dailyForecasts.map((dailyForecast, idx) => (
-                                        idx == 0 ?
-                                        <tr key={`${index}-${idx}`}>
-                                            <td>{forecast.city}</td>
-                                            <td>{dailyForecast.date}</td>
-                                            <td>{dailyForecast.morningTemperature}</td>
-                                            <td>{dailyForecast.afternoonTemperature}</td>
-                                            <td>{dailyForecast.eveningTemperature}</td>
-                                            <td>{dailyForecast.condition}</td>
-                                            <td>{dailyForecast.humidity}</td>
-                                        </tr>
-                                        : null
+                                        searchQuery.length > 0 || idx === 0 ? (
+                                            <tr key={`${index}-${idx}`}>
+                                                <td>{forecast.city}</td>
+                                                <td>{dayjs(dailyForecast.date).format('DD/MM/YYYY')}</td>
+                                                <td>{dailyForecast.morningTemperature}</td>
+                                                <td>{dailyForecast.afternoonTemperature}</td>
+                                                <td>{dailyForecast.eveningTemperature}</td>
+                                                <td>
+                                                    {dailyForecast.condition.toLowerCase() === 'sunny' && <Icon path={mdiWeatherSunny} size={1} />}
+                                                    {dailyForecast.condition.toLowerCase() === 'snowy' && <Icon path={mdiWeatherSnowyHeavy} size={1} />}
+                                                    {dailyForecast.condition.toLowerCase() === 'cloudy' && <Icon path={mdiWeatherCloudy} size={1} />}
+                                                    {dailyForecast.condition.toLowerCase() === 'rainy' && <Icon path={mdiWeatherRainy} size={1} />}
+                                                </td>
+                                                <td>{dailyForecast.humidity}</td>
+                                            </tr>
+                                        ) : null
                                     ))
                                 ))}
                             </tbody>
@@ -56,7 +85,7 @@ function Homepage() {
                 </div>
             </div>
         </>
-    )
+    );
 }
 
 export default Homepage;

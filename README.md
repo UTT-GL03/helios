@@ -101,6 +101,32 @@ Pour cette première version du prototype :
 - l'échantillon de données est encore chargé dans le code de manière statique,
 - les fonctionnalités implémentées ne sont que celles nécessaires pour suivre le scénario prioritaire ("Consulter la météo").
 
-Ce scénario nécessite de pouvoir naviguer sur la page principale qui contient la météo du jour.
+Ce scénario nécessite de pouvoir naviguer sur la page principale qui contient la météo du jour. On se sert ensuite de la barre de recherche pour trouver la météo de la ville qui nous intéresse.
 
 ### Page principale
+
+Nous avons donc développé la page d'accueil pour qu'elle affiche un échantillon de données météo sous la forme d'un tableau, comme prévu par la maquette. Elle affiche la météo du jour pour 3 villes si aucune recherche n'est faite (cf. Fig. 3) et affiche la météo de la semaine si l'utilisateur recherche une ville en particulier (cf. Fig. 4)
+
+![Maquette de la page pro](./wireframe/mainPage.png)
+__Fig.3__: Prototype de la page principal 
+
+![Maquette de la page pro](./wireframe/mainPageResearch.png)
+__Fig.4__: Prototype de la page principal avec une recherche
+
+Pour l'instant, nous avons choisi le framework de mise en page minimaliste (PicoCSS). Dans la suite du projet, nous verrons si l'impact environnemental du passage à un framework de mise en page plus puissant (comme Bootstrap ou Tailwind) est acceptable.
+
+Nous avons choisi une librairie qui permet l'import d'icones pour afficher de manière plus ludique la météo. Par la suite, nous étudierons l'impact de l'utilisation d'une librairie par rapport à l'import des fichiers .svg dans le projet.
+
+Nous avons décidé, contrairement à l'ensemble des services concurrents, de ne pas surcharger la page d'informations, d'articles ou encore d'une carte interactive qui nécessite beaucoup de ressource. 
+Si de telles fonctionnalités devaient être introduites, il faudrait mettre en balance leurs utilités et leurs impacts a priori important.
+
+Dans l'état actuel du prototype, il est possible d'avoir une première idée de l'impact environnemental du frontend. Bien entendu, il manque encore le chargement dynamique des données, mais nous pouvons déjà évaluer l'impact de l'affichage des données et du framework (au sens large : React, PicoCSS, DayJS). Cette évaluation de l'impact (cf. Tab.1) est déjà encourageante en mode "développement" mais encore plus en mode "pré-production". Nous mesurons ici l'effet positif de l'adoption d'outils de développement Web intégrant la "minification" (cf. Wikipédia) du code et la concaténation du code d'une part et des feuilles de style d'autre part.
+
+
+
+|   | EcoIndex| GES (gCO2e) | Taille du DOM | Requêtes | Taille de la page (ko)
+|---|--------:|------------:|--------------:|---------:|---------------------:
+| Mode "développement"  | 76 B🟢 |  1,4 | 64 | 24 | 4609
+| Mode "pré-production" | 93.06 A🟢 | 1,14 | 61 | 4 | 76 
+
+__Tab.1__: Évaluation de l'impact du prototype de la page d'accueil.
