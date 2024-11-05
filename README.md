@@ -138,9 +138,17 @@ Avec l'ajout de ce modèle de page et la mise en place de la navigation entre le
 
 |   | EcoIndex| GES (gCO2e) | Taille du DOM | Requêtes | Taille de la page (ko)
 |---|--------:|------------:|--------------:|---------:|---------------------:
-| 1. Consulter la météo des villes de l'acceuil 					   | 93.06 A🟢 |  1,14 | 61 | 4 | 76
+| 1. Consulter la météo des villes de l'accueil 					   | 93.06 A🟢 |  1,14 | 61 | 4 | 76
 | 2. rechercher  une ville			   | 91.15 A🟢 | 1,77 | 97 | 4 | 102
 | 3. Revenir à l'acceuil | 91.15 A🟢 | 1,77 | 97 | 4 | 102
 
 
 __Fig.2__: Évaluation de l'impact du scénario "rechercher la météo d'une ville" dans le prototype n°1.
+
+
+
+## Prototype n°2 : Fonctionnalités pour le scénario prioritaire avec données statiques chargées de manière dynamique
+
+Pour cette deuxième version du prototype, les données (toujours statiques) sont désormais chargées par le frontend à travers le réseau immédiatement après un premier affichage à vide. Ce comportement, plus réaliste, n'a pour effet qu'une requête supplémentaire par page affichée.
+
+Concernant l'évaluation de l'impact environemental du scénario, par rapport au tableau précédent (cf. Tab.2), à l'exception du nombre de requêtes qui est incrémenté de 1, les résultats sont strictement identiques.
