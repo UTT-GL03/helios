@@ -13,7 +13,9 @@ function Homepage() {
 useEffect(() => { 
     fetch('./sample_data.json')
     .then((response) => response.json())
-    .then((data) => setData(data));
+    .then((data) =>{ 
+        setData(data);
+        setFilteredData(data.forecasts);});
 
     }, []);
 
