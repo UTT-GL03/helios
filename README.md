@@ -152,3 +152,30 @@ __Fig.2__: Évaluation de l'impact du scénario "rechercher la météo d'une vil
 Pour cette deuxième version du prototype, les données (toujours statiques) sont désormais chargées par le frontend à travers le réseau immédiatement après un premier affichage à vide. Ce comportement, plus réaliste, n'a pour effet qu'une requête supplémentaire par page affichée.
 
 Concernant l'évaluation de l'impact environemental du scénario, par rapport au tableau précédent (cf. Tab.2), à l'exception du nombre de requêtes qui est incrémenté de 1, les résultats sont strictement identiques.
+
+Concernant l'évaluation de l'impact environemental du scénario, par rapport au tableau précédent (cf. Tab.2), à l'exception du nombre de requêtes qui est incrémenté de 1, les résultats sont strictement identiques.
+D'ailleurs, à partir de cette version, et à moins de changements profonds, l'EcoIndex ne devrait plus évoluer de manière significative.
+Nous utiliserons désormais un autre logiciel, *GreenFrame*, qui évalue non pas l'impact "environné" de la consultation (incorporant une participation au cycle de vie du terminal) mais celui de la consultation proprement dite (cf. Tab.3) et de manière beaucoup plus fiable à partir des statistiques d'utilisation des ressources physiques (CPU, mémoire, réseau, disque).
+
+| | Impact de la consultation de la météo
+|--------------|----:
+| Meteo France | 302         
+| Meteo Blue   | 183
+| Meteo Agricole   | 80
+| Yr           | 41          
+| __HELIOS__ | __31__
+
+__Tab.3__ : Impact en mg CO2e de la consultation proprement dite des pages des services existants et de notre prototype.
+
+Pour les services existants, sur le graphique présentant l'utilisation dans le temps des ressources (cf. Fig.4), on constate d'autres pics que le pic initial, probablement associés au chargement et à l'affichage de contenus multimédias et de publicités, ou causés par des techniques de pistage sur le Web.
+
+![Impact du journal Le Monde](./benchmark/meteoFrance.png)
+__Fig.4__: Consommation de ressources lors de la consultation de la page météo *météo france*.
+
+Pour notre prototype, au contraire, le graphique (cf. Fig.5) présente un unique pic significatif de consommation de CPU et de réseau.
+Notons par ailleurs que le pic de CPU est 40 fois plus faible que celui de la figure précédente.
+Par ailleurs, nous remarquons que cette consommation ne compte que pour 3% de la consommation totale, le reste étant consommé par l'écran durant la durée de la mesure.
+
+![Impact du prototype](./benchmark/helios_homepage.png)
+__Fig.5__ : Consommation de ressources par le navigateur lors de la consultation de la météo dans notre prototype.
+
