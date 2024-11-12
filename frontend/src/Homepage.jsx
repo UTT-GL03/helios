@@ -1,22 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import './App.css';
-import data from './assets/sample_data.json';
 import Icon from '@mdi/react';
 import { mdiMenu, mdiWeatherSunny, mdiWeatherCloudy, mdiWeatherSnowyHeavy, mdiWeatherRainy } from '@mdi/js';
 import dayjs from 'dayjs';
 
+
 function Homepage() {
     const [searchQuery, setSearchQuery] = useState('');
-    const [filteredData, setFilteredData] = useState(data.forecasts);
+    const [filteredData, setFilteredData] = useState([]);
+    const [data, setData] = useState( [] );
+
+useEffect(() => { 
+    fetch('./sample_data.json')
+    .then((response) => response.json())
+    .then((data) =>{ 
+        setData(data);
+        setFilteredData(data.forecasts);});
+
+    }, []);
+
 
     const handleSearch = (event) => {
-        if (event.key === 'Enter') {
+       
             const query = searchQuery.trim().toLowerCase();
             const result = data.forecasts.filter(forecast =>
                 forecast.city.toLowerCase().includes(query)
             );
             setFilteredData(result);
-        }
+        
     };
 
     return (
