@@ -1,0 +1,7 @@
+baseURL: http://localhost
+projectName: Helios
+scenarios:
+    - path: ./benchmark/consulterMeteo/scenario1.js
+      name: Consulter la meteo
+containers:
+  - helios-static_hosting-1
