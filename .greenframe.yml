@@ -4,4 +4,4 @@ scenarios:
     - path: ./benchmark/consulterMeteo/benchmark.yaml
       name: Consulter la meteo
 containers:
-  - Helios-static_hosting-1
+  - helios-static_hosting-1
