@@ -45,7 +45,6 @@ Enfin, l'application se doit également d'être accessible et pertinente pour le
 2. Il choisit de voir la météo de sa région.
 3. Il consulte la météo du lendemain et des jours prochains.
 
-Les résultats de performance sont assez différents entre Météo France, Yr et la Météo Agricole. Météo France et la Météo Agricole ont beaucoup de pubs et de cookies qui alourdissent la page et augmente le réseau nécessaire.
 
 ## Scénario 2 : Consulter des articles
 1. L'utilisateur de météo en ligne se rend sur la page d'accueil grâce à un favori (donc sans passer par un moteur de recherche). Il consulte les titres.
@@ -73,6 +72,11 @@ Les résultats sont les suivants (attention, d'une journée à l'autre, on peut 
 - Scénario "[Consulter la météo de ma région](https://htmlpreview.github.io/?https://raw.githubusercontent.com/UTT-GL03/helios/main/benchmark/consulterMeteo/results.html)",
 - Scénario "[Lire des articles parmi les articles de la page d'accueil](https://htmlpreview.github.io/?https://raw.githubusercontent.com/UTT-GL03/helios/main/benchmark/scenarioArticle/benchmark_.html)".
 
+Les résultats de performance sont assez différents entre Météo France, Yr et la Météo Agricole. Météo France et la Météo Agricole ont beaucoup de pubs et de cookies qui alourdissent la page et augmente le réseau nécessaire.
+
+On peut aussi noter le nombre de requêtes nécessaires. Par exemple, pour charger la page d'accueil Meteo France il faut 75 requêtes HTTP. Cela confirme bien notre volonté de réduction du nombre d'articles et des images associées.
+À noter que les différents résultats qu'ils soient la taille du DOM ou encore la taille de la page sont directement en corrélation avec les axes d'améliorations que nous avions envisagés. En effet, Meteofrance qui possède la carte de la France, les articles, et des vidéos possède le score le moins bon. Les deux autres sites testés respectent la même logique : moins il y a de features interactives et gourmandes en ressources,  meilleur est le score d'ecoIndex.
+
 ## Maquette de l'interface et échantillon de données
 
 Au vu des différents services comparés, des exigences environnementales exprimées plus haut et des scénarios retenus, nous avons défini pour notre prototype une maquette de l'interface et un échantillon de données réalistes.
@@ -90,8 +94,7 @@ __Fig.2__: Maquette de l'interface pro du prototype
 
 
 Pour des raisons de respect des droits d'auteurs, nous utilisons des données générées (avec [`dummy-json`](https://dummyjson.com)).
-Bien que fictives, ces données correspondent à la structure des services concurrents : 3 villes comportant la météo pourchacun (température, vent, météo) sur 7 jours (voir [modèle de données](./frontend/sample_data.hbs)). 
-Dans un objectif de sobriété environnementale, les articles sont limités à ceux du jour et de la veille.
+Bien que fictives, ces données correspondent à la structure des services concurrents : 3 villes comportant la météo pour chacun (température, vent, météo) sur 7 jours (voir [modèle de données](./frontend/sample_data.hbs)). 
 
 
 ## Prototype n°1 : Fonctionnalités pour le scénario prioritaire avec données statiques
@@ -120,14 +123,14 @@ Nous avons choisi une librairie qui permet l'import d'icones pour afficher de ma
 Nous avons décidé, contrairement à l'ensemble des services concurrents, de ne pas surcharger la page d'informations, d'articles ou encore d'une carte interactive qui nécessite beaucoup de ressource. 
 Si de telles fonctionnalités devaient être introduites, il faudrait mettre en balance leurs utilités et leurs impacts a priori important.
 
-Dans l'état actuel du prototype, il est possible d'avoir une première idée de l'impact environnemental du frontend. Bien entendu, il manque encore le chargement dynamique des données, mais nous pouvons déjà évaluer l'impact de l'affichage des données et du framework (au sens large : React, PicoCSS, DayJS). Cette évaluation de l'impact (cf. Tab.1) est déjà encourageante en mode "développement" mais encore plus en mode "pré-production". Nous mesurons ici l'effet positif de l'adoption d'outils de développement Web intégrant la "minification" (cf. Wikipédia) du code et la concaténation du code d'une part et des feuilles de style d'autre part.
+Dans l'état actuel du prototype, il est possible d'avoir une première idée de l'impact environnemental du frontend. Bien entendu, il manque encore le chargement dynamique des données, mais nous pouvons déjà évaluer l'impact de l'affichage des données et du framework (au sens large : React, PicoCSS, DayJS). Cette évaluation de l'impact (cf. Tab.1) est déjà encourageante en mode "développement" mais encore plus en mode "pré-production". Nous mesurons ici l'effet positif de l'adoption d'outils de développement Web intégrant la ["minification"](https://fr.wikipedia.org/wiki/Minification) (cf. *Wikipédia*) du code et la concaténation du code d'une part et des feuilles de style d'autre part.
 
 
 
 |   | EcoIndex| GES (gCO2e) | Taille du DOM | Requêtes | Taille de la page (ko)
 |---|--------:|------------:|--------------:|---------:|---------------------:
 | Mode "développement"  | 76 B🟢 |  1,4 | 64 | 24 | 4609
-| Mode "pré-production" | 93.06 A🟢 | 1,14 | 61 | 4 | 76 
+| Mode "pré-production" | 93 A🟢 | 1,14 | 61 | 4 | 76 
 
 __Tab.1__: Évaluation de l'impact du prototype de la page d'accueil.
 
@@ -138,9 +141,9 @@ Avec l'ajout de ce modèle de page et la mise en place de la navigation entre le
 
 |   | EcoIndex| GES (gCO2e) | Taille du DOM | Requêtes | Taille de la page (ko)
 |---|--------:|------------:|--------------:|---------:|---------------------:
-| 1. Consulter la météo des villes de l'accueil 					   | 93.06 A🟢 |  1,14 | 61 | 4 | 76
-| 2. rechercher  une ville			   | 91.15 A🟢 | 1,77 | 97 | 4 | 102
-| 3. Revenir à l'acceuil | 91.15 A🟢 | 1,77 | 97 | 4 | 102
+| 1. Consulter la météo des villes de l'accueil 					   | 93 A🟢 |  1,14 | 61 | 4 | 76
+| 2. rechercher  une ville			   | 91 A🟢 | 1,77 | 97 | 4 | 102
+| 3. Revenir à l'accueil | 91 A🟢 | 1,77 | 97 | 4 | 102
 
 
 __Tab.2__: Évaluation de l'impact du scénario "rechercher la météo d'une ville" dans le prototype n°1.
