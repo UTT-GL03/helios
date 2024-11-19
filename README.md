@@ -180,3 +180,22 @@ Par ailleurs, nous remarquons que cette consommation ne compte que pour 3% de la
 ![Impact du prototype](./benchmark/helios_homepage.png)
 __Fig.6__ : Consommation de ressources par le navigateur lors de la consultation de la météo dans notre prototype.
 
+
+## Prototype n°3 : Fonctionnalités pour le scénario prioritaire avec données stockées dans une base de données
+
+Pour la troisième version du prototype, les données sont désormais stockées dans un système de base de données interrogeable à travers une API Web (*CouchDB*).
+L'intérêt d'une source de données dynamique est d'une part, à terme, de pouvoir ajouter ou modifier des articles plus facilement, et d'autre part de déporter sur le serveur le filtrage des données pertinentes.
+
+Sur ce deuxième enjeu, on observe effectivement dans les mesures (cf. Fig.7) une baisse de la charge du réseau (de 740 à 550 ko) entre les deux prototypes concernant la consultation d'un article.
+
+![](./benchmark/Qvotidie_article_v2.png)
+![](./benchmark/Qvotidie_article_v3.png)
+__Fig.7__ : Comparaison de l'impact de la consultation de la page d'un article entre les prototypes 2 (en haut) et (3 en bas).
+
+Cette baisse d'impact du réseau est cependant largement compensée par une utilisation du CPU par la base de données, utilisation qui semble par ailleurs continue (cf. Fig.8).
+
+![](./benchmark/Qvotidie_article_v3_backend.png)
+__Fig.8__ : Profil dans le temps de l'impact de la base de données lors de la consultation de la page d'un article.
+
+De ces différentes mesures, nous pouvons retenir que l'effet de l'introduction d'une base de données, quoique négligeable, est, pour l'instant, plutôt défavorable d'un point de vue écologique.
+Le bilan de ce changement devrait cependant rapidement s'inverser avec l'augmentation de la quantité de données gérées.
