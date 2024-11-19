@@ -11,7 +11,7 @@ function Homepage() {
     const [data, setData] = useState( [] );
 
 useEffect(() => { 
-    fetch('./sample_data.json')
+    fetch('./http://localhost:5984/database-helios/_all_docs?include_docs=true')
     .then((response) => response.json())
     .then((data) =>{ 
         setData(data);
