@@ -5,3 +5,4 @@ scenarios:
       name: Consulter la meteo
 containers:
   - helios-static_hosting-1
+  - helios-backend-1

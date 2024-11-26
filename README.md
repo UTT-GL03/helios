@@ -1,4 +1,4 @@
-# HELIOS : Réduction de l'impact écologique du service numérique d'un établissement de météorologie et de climatologie
+    # HELIOS : Réduction de l'impact écologique du service numérique d'un établissement de météorologie et de climatologie
 
 ## Choix du sujet
 Nous revenons tous deux d'un semestre à l'étranger dans deux pays avec une météo très distincte. En Norvège la météo était particulièrement changeante et extrême par moments. Consulter la météo chaque jour est devenu une habitude, de même que la programmation journalière d'une notification récapitulative.
@@ -180,3 +180,22 @@ Par ailleurs, nous remarquons que cette consommation ne compte que pour 3% de la
 ![Impact du prototype](./benchmark/helios_homepage.png)
 __Fig.6__ : Consommation de ressources par le navigateur lors de la consultation de la météo dans notre prototype.
 
+
+## Prototype n°3 : Fonctionnalités pour le scénario prioritaire avec données stockées dans une base de données
+
+Pour la troisième version du prototype, les données sont désormais stockées dans un système de base de données interrogeable à travers une API Web (*CouchDB*).
+L'intérêt d'une source de données dynamique est d'une part, à terme, de pouvoir ajouter ou modifier la météo plus facilement, et d'autre part de déporter sur le serveur le filtrage des données pertinentes.
+
+Sur ce deuxième enjeu, on observe  dans les mesures (cf. Fig.7) que la charge du réseau entre les deux prototypes concernant la consultation de la météo est sensiblement la même. Ceci est dû à la simplicité de notre application qui ne contient qu'une page à charger. Néanmoins, en supposant que notre application contiendra à terme plusieurs pages et d'autres lots de données, on peut s'attendre à une baisse de la charge du réseau pour l'aff
+
+![](./benchmark/helios_v2.png)
+![](./benchmark/helios_v3.png)
+__Fig.7__ : Comparaison de l'impact de la consultation de la page de la météo entre les prototypes 2 (en haut) et (3 en bas).
+
+De plus, on peut constater une utilisation du CPU par la base de données, utilisation qui semble par ailleurs continue et plus important qu'auparavant. (cf. Fig.8).
+
+![](./benchmark/helios_backend_v3.png)
+__Fig.8__ : Profil dans le temps de l'impact de la base de données lors de la consultation de la météo.
+
+De ces différentes mesures, nous pouvons retenir que l'effet de l'introduction d'une base de données, quoique négligeable, est, pour l'instant, plutôt défavorable d'un point de vue écologique.
+Le bilan de ce changement devrait cependant rapidement s'inverser avec l'augmentation de la quantité de données gérées.
