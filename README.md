@@ -213,3 +213,41 @@ Cette exigence fonctionnelle bien que coûteuse du point de vue environnemental 
 Par conséquent nous adopterons également ce choix de conception.
 
 L'augmentation du volume d'articles est linéaire : à raison de 25 nouveaux articles par jour, la base de données sera de 3000 articles au bout de 4 mois (et ainsi de suite).
+
+### Évolution de l'impact environnemental avant correction
+
+La figure 9 illustre l'impact du passage à l'échelle de 20 à 2000 éléments de météo (correspondant à la météo de 133 villes pendant 2 semaines 
+ de manière quotidienne).
+On observe, sur le *backend*, une multiplication par 16 de l'impact du processeur, et  concernant l'impact du réseau, une multiplication par 33 pour le *frontend* et une net augmentation non quantifiable (de 0 à 5 mWh) pour le *backend*.
+
+![](./benchmark/scale_db.png)
+__Fig.9__ : Évolution de l'impact de la consultation de la météo en passant de 20 éléments à 2000 (soit 4 mois d'historique).
+
+Dans un site de météo, une approche similaire à celle de la presse numérique peut être adoptée pour la gestion des données météorologiques. Au lieu de charger toutes les prévisions météo de l'année ou d'une longue période au départ, ce qui pourrait entraîner une surcharge de données et une expérience utilisateur moins fluide, nous pouvons opter pour une approche plus progressive.
+
+Voici l'idée :
+
+Prise en compte du passage à l'échelle dans l'application météo
+Au lieu de charger l'intégralité des prévisions météo pour toutes les villes sur une longue période dès l'ouverture de l'application, nous adopterons une méthode de chargement progressif des données. Concrètement, dès l'ouverture de l'application nous commencerons par charger un nombre réduit de prévisions 10 éléments de météo.
+
+Stratégies de chargement des données :
+Affichage initial (3 jours) :
+
+Lorsque l'utilisateur accède à la page principale de l'application ou à une page de détails pour une ville donnée, seuls les prévisions météorologiques de 10 dates et/ou villes seront chargées. Ces données peuvent être issues d'une API de météo.
+Cela permet d'afficher rapidement des informations sans nécessiter un gros téléchargement initial.
+Chargement en fonction de la recherche de l'utilisateur :
+
+Si l'utilisateur souhaite consulter des prévisions précise par exemple une ville particulière, l'application chargera  les prévisions supplémentaires de la ville concerné en fonction de la recherche de l'utilisateur. Lorsqu'il fait défiler la page ou clique sur un bouton pour voir plus de prévisions, l'application enverra une requête à l'API pour récupérer les prévisions des jours suivants.
+
+### Évolution de l'impact environnemental après correction
+
+La stratégie choisie a eu l'effet escompté : les mesures d'impact (cf. Fig. 10) montrent que son implémentation a permis de contrecarrer l'augmentation de l'impact environnemental causée par le passage de 30 à 3000 articles.
+
+![](./benchmark/consumption.png)
+__Fig.10__ : Évolution de l'impact de l'application avec l'augmentation de la quantité de données puis sa prise en compte.
+
+On peut voir un retour à l'impact d'avant l'augmentation de la quantité des données traitées, = notamment sur le réseau entre le *backend* et le *frontend* (cf. Fig. 11).
+Cette amélioration s'explique par le fait que la technique utilisée pour filtrer les articles a également permis de choisir les attributs réellement nécessaires (et donc de ne plus transférer le contenu des articles pour cette page des titres).
+
+![](./benchmark/helios_final_comparison.png)
+__Fig.11__ : Comparaison de l'impact de la page des titres optimisée avec 2000 éléments et non-optimisée avec 20 éléments.
