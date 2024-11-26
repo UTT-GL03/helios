@@ -1,4 +1,4 @@
-    # HELIOS : Réduction de l'impact écologique du service numérique d'un établissement de météorologie et de climatologie
+# HELIOS : Réduction de l'impact écologique du service numérique d'un établissement de météorologie et de climatologie
 
 ## Choix du sujet
 Nous revenons tous deux d'un semestre à l'étranger dans deux pays avec une météo très distincte. En Norvège la météo était particulièrement changeante et extrême par moments. Consulter la météo chaque jour est devenu une habitude, de même que la programmation journalière d'une notification récapitulative.
@@ -199,3 +199,17 @@ __Fig.8__ : Profil dans le temps de l'impact de la base de données lors de la c
 
 De ces différentes mesures, nous pouvons retenir que l'effet de l'introduction d'une base de données, quoique négligeable, est, pour l'instant, plutôt défavorable d'un point de vue écologique.
 Le bilan de ce changement devrait cependant rapidement s'inverser avec l'augmentation de la quantité de données gérées.
+
+
+## Prototype n°4 : Fonctionnalités pour le scénario prioritaire avec filtrage des données
+
+### Passage à l'échelle
+
+
+Dans le cas qui nous occupe de la presse quotidienne et dans le cadre des fonctionnalités envisagées (consultation d'articles), l'augmentation de la quantité des données à traiter ne viendra ni de l'augmentation du nombre de journalistes ni même de celle  des lecteurs.
+Par contre, il est d'usage sur les applications de presse d'avoir accès aux archives du journal,
+le but étant d'éclairer l'actualité à la lumière du passé plus ou moins proche.
+Cette exigence fonctionnelle bien que coûteuse du point de vue environnemental nous semble contribuer grandement à l'utilité sociale de la plateforme.
+Par conséquent nous adopterons également ce choix de conception.
+
+L'augmentation du volume d'articles est linéaire : à raison de 25 nouveaux articles par jour, la base de données sera de 3000 articles au bout de 4 mois (et ainsi de suite).

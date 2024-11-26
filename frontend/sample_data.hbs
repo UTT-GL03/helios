@@ -1,46 +1,18 @@
 {
-  "forecasts": [
-    {
-      "city": "Paris",
-      "dailyForecasts": [
-        {{#repeat 7}}  
-        {
-          "date": "{{date '2024-10-15' '2024-10-21' 'YYYY-MM-DD'}}",  
-          "temperature": "{{int 5 35}}",  
-          "condition": "{{random 'Sunny' 'Rainy' 'Cloudy' 'Stormy' 'Snowy'}}",  
-          "windSpeed": "{{int 5 50}}",  
-          "humidity": "{{int 30 100}}%"  
-        }
-        {{/repeat}}
-      ]
-    },
-    {
-      "city": "Troyes",
-      "dailyForecasts": [
-        {{#repeat 7}}  
-        {
-          "date": "{{date '2024-10-15' '2024-10-21' 'YYYY-MM-DD'}}",
-          "temperature": "{{int 5 35}}",
-          "condition": "{{random 'Sunny' 'Rainy' 'Cloudy' 'Stormy' 'Snowy'}}",
-          "windSpeed": "{{int 5 50}}",
-          "humidity": "{{int 30 100}}%"
-        }
-        {{/repeat}}
-      ]
-    },
-    {
-      "city": "Strasbourg",
-      "dailyForecasts": [
-        {{#repeat 7}}  
-        {
-          "date": "{{date '2024-10-15' '2024-10-21' 'YYYY-MM-DD'}}",
-          "temperature": "{{int 5 35}}",
-          "condition": "{{random 'Sunny' 'Rainy' 'Cloudy' 'Stormy' 'Snowy'}}",
-          "windSpeed": "{{int 5 50}}",
-          "humidity": "{{int 30 100}}%"
-        }
-        {{/repeat}}
-      ]
-    }
+  "docs": [
+    {{#repeat 2000}} 
+    {  
+      "city": "{{city}}",
+      "date": "{{date '2024-10-15' '2024-11-15' 'YYYY-MM-DD'}}",
+      "sunrise": "{{time '06:00' '08:00'}}",
+      "sunset": "{{time '18:00' '20:00'}}",
+      "morningTemperature": "{{int 5 20}}",
+      "afternoonTemperature": "{{int 10 30}}",
+      "eveningTemperature": "{{int 5 25}}",
+      "condition": "{{random 'Sunny' 'Rainy' 'Cloudy' 'Snowy' 'Stormy'}}",
+      "windSpeed": "{{int 5 50}}",
+      "humidity": "{{int 30 100}}%"
+    }{{#unless @last}},{{/unless}}
+    {{/repeat}}
   ]
 }
