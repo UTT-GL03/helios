@@ -11,39 +11,17 @@ function Homepage() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5984/helios/_find', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                selector: {
-                    "_id": {
-                        "$gt": null
-                    }
-                },
-                fields: ["_id", "city", "date", "morningTemperature", "afternoonTemperature", "eveningTemperature", "humidity", "condition"],
-                limit: 25
-            })
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
+        fetch('http://localhost:5984/helios/_all_docs?include_docs=true')
+            .then((response) => response.json())
             .then((data) => {
-                if (data.docs && data.docs.length > 0) {
-                    setData(data.docs);
-                    setFilteredData(data.docs);
-                } else {
-                    setError(new Error('No matching documents found'));
-                }
+                setData(data.rows.map((row) => row.doc));
+                setFilteredData(data.rows.map((row) => row.doc));
             })
             .catch((error) => {
                 setError(error);
                 console.error('Error fetching data:', error);
             });
     }, []);
-
 
     const handleSearch = (event) => {
         if (event.key === 'Enter') {
