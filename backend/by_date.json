@@ -1,7 +1,7 @@
 {
     "index": {
       "fields": [
-        {"date": "desc"}
+        {"date": "asc"}
       ]
     },
     "name": "by_date",

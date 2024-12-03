@@ -1,8 +1,8 @@
 {
     "index": {
       "fields": [
-        {"city": "desc"},
-        {"date": "desc"}
+        {"date": "asc"},
+        {"city": "asc"}
       ]
     },
     "name": "by_date_and_city",
