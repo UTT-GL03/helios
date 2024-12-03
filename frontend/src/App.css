@@ -117,6 +117,13 @@
   color: #33059d;
 }
 
+hr{
+  margin-top: 8;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-color: #e5e7eb;
+}
+
 footer {
   padding: 2rem 1rem;
 }

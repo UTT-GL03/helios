@@ -83,8 +83,8 @@ function Homepage() {
                                     <th>Température MATIN (°C)</th>
                                     <th>Température APREM (°C)</th>
                                     <th>Température SOIRÉE (°C)</th>
-                                    <th>Condition</th>
                                     <th>Humidité</th>
+                                    <th>Condition</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -92,7 +92,7 @@ function Homepage() {
                                     <tr key={index}>
                                         <td>{forecast.city}</td>
                                         <td>{dayjs(forecast.date).format('DD/MM/YYYY')}</td>
-                                        <td>{forecast.morningTemperature}</td>
+                                        <td>{forecast.morningTemperature + "°"}</td>
                                         <td>{forecast.afternoonTemperature}</td>
                                         <td>{forecast.eveningTemperature}</td>
                                         <td>{forecast.humidity}</td>

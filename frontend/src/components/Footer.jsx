@@ -4,6 +4,7 @@ import '../App.css';
 function Footer() {
     return (
         <footer className="container-fluid">
+            <hr />
             <div className="grid">
                 <section>
                     <h5>HELIOS</h5>
@@ -16,9 +17,6 @@ function Footer() {
                     </div>
                     <div>
                         <a href="mailto:eve.bernhard@utt.fr">Contact Us</a>
-                    </div>
-                    <div>
-                        <a href="/privacy">Privacy Policy</a>
                     </div>
                 </section>
             </div>
