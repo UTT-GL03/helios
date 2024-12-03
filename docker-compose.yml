@@ -45,3 +45,17 @@ services:
     depends_on:
       accessible_backend:
         condition: service_completed_successfully
+  
+  index:
+    image: curlimages/curl
+    entrypoint: ["/bin/sh","-c"]
+    volumes:
+      - ./backend/by_date.json:/by_date.json
+      - ./backend/by_date_and_city.json:/by_date_and_city.json
+    command:
+      - |
+        curl -X POST http://backend:5984/helios/_index -H "Content-Type: application/json" -d @/by_date.json -u '${COUCHDB_USER}:${COUCHDB_PASSWORD}'
+        curl -X POST http://backend:5984/helios/_index -H "Content-Type: application/json" -d @/by_date_and_city.json -u '${COUCHDB_USER}:${COUCHDB_PASSWORD}'
+    depends_on:
+      accessible_backend:
+        condition: service_completed_successfully
