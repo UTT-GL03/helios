@@ -20,8 +20,9 @@ function Homepage() {
                         "$gt": null
                     }
                 },
+                sort: [{"date": "asc"}, {"city": "asc"}],
                 fields: ["_id", "city", "date", "morningTemperature", "afternoonTemperature", "eveningTemperature", "humidity", "condition"],
-                limit: 25
+                limit: 10
             })
         })
             .then((response) => {

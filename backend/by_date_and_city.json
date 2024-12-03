@@ -1,0 +1,10 @@
+{
+    "index": {
+      "fields": [
+        {"date": "asc"},
+        {"city": "asc"}
+      ]
+    },
+    "name": "by_date_and_city",
+    "type": "json"
+  }
