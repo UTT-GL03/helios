@@ -41,16 +41,126 @@
   color: #888;
 }
 
-.WeatherTable{
-  border-color:#686767 ;
+.WeatherTable {
+  border-color: #686767;
   border: 1px solid;
   padding: 30px;
-  margin-top: 25px ;
+  margin-top: 25px;
   border-radius: 10px;
 }
 
-.CityWrapper{
+.CityWrapper {
   margin: 5%;
   margin-inline: auto;
   align-self: center;
+}
+
+/* Basic Styling for Navbar */
+.NavBar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.NavBar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.ProButton, .NavBarButton {
+  background-color: #290975;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.ProButton:hover, .NavBarButton:hover {
+  background-color: #33059d;
+}
+
+/* Burger Menu */
+.BurgerMenu {
+  display: none;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.BurgerMenu.is-active {
+  display: flex;
+}
+
+.BurgerMenu li {
+  padding: 0.5rem 1rem;
+}
+
+.BurgerMenu li a {
+  text-decoration: none;
+  color: #290975;
+  font-size: 1rem;
+}
+
+.BurgerMenu li a:hover {
+  color: #33059d;
+}
+
+hr{
+  margin-top: 8;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-color: #e5e7eb;
+}
+
+footer {
+  padding: 2rem 1rem;
+}
+
+footer .grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+footer section h5, footer section h6 {
+  margin-bottom: 0.5rem;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin: 0.5rem 0;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: gray;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer .text-center {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6c757d;
 }

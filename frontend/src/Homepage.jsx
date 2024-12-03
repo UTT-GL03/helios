@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Icon from '@mdi/react';
-import { mdiMenu, mdiWeatherSunny, mdiWeatherCloudy, mdiWeatherSnowyHeavy, mdiWeatherRainy, mdiWeatherLightningRainy } from '@mdi/js';
+import { mdiWeatherSunny, mdiWeatherCloudy, mdiWeatherSnowyHeavy, mdiWeatherRainy, mdiWeatherLightningRainy } from '@mdi/js';
 import dayjs from 'dayjs';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 function Homepage() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -58,18 +60,7 @@ function Homepage() {
 
     return (
         <div>
-            <nav className='NavBar'>
-                <ul>
-                    <button className='ProButton' onClick={() => window.location.href = '/pro'}>
-                        Pro +
-                    </button>
-                </ul>
-                <ul>
-                    <button className='NavBarButton'>
-                        <Icon path={mdiMenu} size={1} />
-                    </button>
-                </ul>
-            </nav>
+            <Navbar />
 
             <div className="WeatherTable">
                 <input
@@ -93,8 +84,8 @@ function Homepage() {
                                     <th>Température MATIN (°C)</th>
                                     <th>Température APREM (°C)</th>
                                     <th>Température SOIRÉE (°C)</th>
-                                    <th>Condition</th>
                                     <th>Humidité</th>
+                                    <th>Condition</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -102,7 +93,7 @@ function Homepage() {
                                     <tr key={index}>
                                         <td>{forecast.city}</td>
                                         <td>{dayjs(forecast.date).format('DD/MM/YYYY')}</td>
-                                        <td>{forecast.morningTemperature}</td>
+                                        <td>{forecast.morningTemperature + "°"}</td>
                                         <td>{forecast.afternoonTemperature}</td>
                                         <td>{forecast.eveningTemperature}</td>
                                         <td>{forecast.humidity}</td>
@@ -130,6 +121,7 @@ function Homepage() {
                     )}
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }
