@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-size: 0.9rem;
 }
 
 .logo {
@@ -77,7 +78,7 @@
   color: white;
   border: none;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   cursor: pointer;
   border-radius: 0.5rem;
 }
@@ -110,7 +111,7 @@
 .BurgerMenu li a {
   text-decoration: none;
   color: #290975;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .BurgerMenu li a:hover {
@@ -161,6 +162,6 @@ footer ul li a:hover {
 footer .text-center {
   margin-top: 1.5rem;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   color: #6c757d;
 }
