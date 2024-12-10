@@ -251,3 +251,12 @@ Cette amélioration s'explique par le fait que la technique utilisée pour filtr
 
 ![](./benchmark/helios_final_comparison.png)
 __Fig.11__ : Comparaison de l'impact de la page des titres optimisée avec 2000 éléments et non-optimisée avec 20 éléments.
+
+
+## Prototype n°5 : Fonctionnalités après améliorations
+
+Dans un premier temps nous avons travaillé sur l'optimisation de la page d'accueil. La limite mise en place sur le fetch de la base de données posait problème pour la recherche de ville. La recherche n'était que faite sur les 10 premiers résultats récupérés. Nous avons alors mis en place une pagination pour une recherche progressive dans la base de données.
+On observe seulement une augmentation du CPU (cf. Fig. 12).
+
+![](./benchmark/helios_v5_pagination.png.png)
+__Fig.11__ : Comparaison de l'impact de la page principale optimisée avec la pagination et sans.
