@@ -1,7 +1,5 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  padding: 3% 10% 10% 10%;
   text-align: center;
 }
 
@@ -41,16 +39,35 @@
   color: #888;
 }
 
-.WeatherTable{
-  border-color:#686767 ;
+.WeatherTable {
+  border-color: #686767;
   border: 1px solid;
   padding: 30px;
-  margin-top: 25px ;
+  margin-top: 25px;
   border-radius: 10px;
 }
 
-.CityWrapper{
+.CityWrapper {
   margin: 5%;
   margin-inline: auto;
   align-self: center;
+}
+
+.main_rapper {
+  display: flex;
+  padding-top: 3%;
+}
+
+.sunset_graph {
+  margin-left: 10%;
+  width: 30%;
+  height: fit-content;
+  border: solid #003366;
+  border-radius: 10px;
+  padding: 1%;
+}
+
+.weather_graph_wrapper {
+  width: 90%;
+  width: 100%;
 }

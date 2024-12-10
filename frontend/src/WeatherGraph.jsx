@@ -2,6 +2,9 @@ import './App.css';
 import { LineChart } from '@mui/x-charts/LineChart';
 import React, { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
+import Icon from '@mdi/react';
+import { mdiWeatherSunsetDown } from '@mdi/js';
+import { mdiWeatherSunsetUp } from '@mdi/js';
 
 function ProPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -20,7 +23,7 @@ function ProPage() {
             "$gt": null
           }
         },
-        fields: ["_id", "city", "date", "morningTemperature", "afternoonTemperature", "eveningTemperature"],
+        fields: ["_id", "city", "date", "morningTemperature", "afternoonTemperature", "eveningTemperature","sunrise","sunset"],
         limit: 2000
 
     })
@@ -71,13 +74,13 @@ function ProPage() {
         const dates = weekData.map((doc) => parseDate(doc.date));
         const morningTemps = weekData.map((doc) => parseFloat(doc.morningTemperature));
         const afternoonTemps = weekData.map((doc) => parseFloat(doc.afternoonTemperature));
-        const eveningTemps = weekData.map((doc) => parseFloat(doc.eveningTemperature));
+        const eveningTemps = weekData.map((doc) =>   parseFloat(doc.eveningTemperature));
 
         setDates(dates);
         setChartData([
-          { name: 'Morning', data: morningTemps },
-          { name: 'Afternoon', data: afternoonTemps },
-          { name: 'Evening', data: eveningTemps },
+          { name: 'Matin', data: morningTemps },
+          { name: 'Après-Midi', data: afternoonTemps },
+          { name: 'Soir', data: eveningTemps },
         ]);
       } else {
         setChartData([]);
@@ -85,10 +88,41 @@ function ProPage() {
     }
   }, [searchQuery, data]);
 
+
+  function findSunrizeofToday(data){
+    const filteredData = data.filter((doc) => doc.city.toLowerCase() === searchQuery.toLowerCase());
+
+    const today = new Date();
+    // const todayString = today.toISOString().split('T')[0];
+    const todayString = "2024-11-02"
+    console.log(filteredData.filter((doc) => doc.date === todayString))
+    const todayData = filteredData.filter((doc) => doc.date === todayString);
+    if(todayData.length > 0){
+      return todayData[0].sunrise;
+    }
+    return null;
+  }
+
+  
+  function findSunsetofToday(data){
+    const filteredData = data.filter((doc) => doc.city.toLowerCase() === searchQuery.toLowerCase());
+
+    const today = new Date();
+    // const todayString = today.toISOString().split('T')[0];
+    const todayString = "2024-11-02"
+    console.log(filteredData.filter((doc) => doc.date === todayString))
+    const todayData = filteredData.filter((doc) => doc.date === todayString);
+    if(todayData.length > 0){
+      return todayData[0].sunset;
+    }
+    return null;
+  }
+
   return (
     
-    <div>
-    
+    <div className="main_rapper">
+      <div className='weather_graph_wrapper'>
+      <h1 >Température des prochains jours</h1>
       <input
         type="text"
         placeholder="Enter city name"
@@ -106,7 +140,7 @@ function ProPage() {
             valueFormatter: (value, context) => {
                 if (context.location === 'tick') {
                   // On formate chaque valeur de date ici en prenant les 3 premiers caractères
-                  return `${String(value).slice(0,1)}/${String(value).slice(1,3)} `  // Exemple de format MDD => Mois-Jour
+                  return `${String(value).slice(0,2)}/${String(value).slice(2,4)} `  // Exemple de format MDD => Mois-Jour
                 } else {
                   return value;  // Retourne la valeur brute si ce n'est pas un tick
                 }
@@ -123,6 +157,22 @@ function ProPage() {
         />      ) : (
         <p>No data to display</p>
       )}
+      </div>
+    
+    
+      <div className='sunset_graph'>
+            <h1>Ephéméride</h1>
+            <div>
+            {findSunrizeofToday(data)}
+            <Icon path={mdiWeatherSunsetUp} size={3} />
+            </div>
+            <div>
+            {findSunsetofToday(data)}
+            <Icon path={mdiWeatherSunsetDown} size={3} />
+            </div>
+          
+
+        </div>
     </div>
   );
 }
