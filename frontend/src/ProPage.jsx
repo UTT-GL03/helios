@@ -1,12 +1,11 @@
 
 import './App.css';
+import WeatherGraph from './WeatherGraph';
 
 function ProPage() {
     return (
         <>
-          <progress />
-
-          <h1 >Développement en cours </h1>
+          <WeatherGraph />
         </>
     )
 }
