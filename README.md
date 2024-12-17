@@ -258,5 +258,18 @@ __Fig.11__ : Comparaison de l'impact de la page des titres optimisée avec 2000 
 Dans un premier temps nous avons travaillé sur l'optimisation de la page d'accueil. La limite mise en place sur le fetch de la base de données posait problème pour la recherche de ville. La recherche n'était que faite sur les 10 premiers résultats récupérés. Nous avons alors mis en place une pagination pour une recherche progressive dans la base de données.
 On observe seulement une augmentation du CPU (cf. Fig. 12).
 
-![](./benchmark/helios_v5_pagination.png.png)
-__Fig.11__ : Comparaison de l'impact de la page principale optimisée avec la pagination et sans.
+![](./benchmark/helios_v5_pagination.png)
+__Fig.12__ : Comparaison de l'impact de la page principale optimisée avec la pagination et sans.
+
+
+## Prototype n°6 : Ajout de la page professionnel 
+
+Dans un premier temps, nous avons étudié le choix de la dépendance que nous allions utiliser pour afficher les graphiques liés à la page pro. Les deux choix étaient MuiChart et chart.js, pour comparer leur impact sur l'application, nous avons utilisé les deux dépendances pour afficher un graphique et ensuite comparées leur impact via GreenFrame. En comparant les deux résultats (cf. Fig. 13) nous constatons que MuiChart à un impact moindre comparé à chart.js. Nous avons donc décidé d'utiliser Mui Chart pour la conception des features de la page professionnelle.
+
+![](./benchmark/comparison_package.png)
+__Fig.13__ : Comparaison de l'impact des deux packages sur la page pro
+
+Maintenant que nous avons choisi notre package, nous développons les features et la page pro. Comme énoncé au début de notre projet, la page pro est ici utilisé par les professionnelles ayant besoin de plus de détail sur la météo. Pour ce faire nous avons ajouté un graphique de l'évolution de la météo au fil des jours de la semaine avec 3 températures (matin, après-midi et soir). Nous avons également un éphéméride en plus(cf. Fig. 14)
+
+![](./benchmark/ProPage.png)
+__Fig.13__ : Page pro + finalisée
