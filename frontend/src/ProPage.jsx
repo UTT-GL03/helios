@@ -119,20 +119,24 @@ function ProPage() {
   return (
     <div>
       < Navbar />
-      <div className="main_rapper">
-        <div className='weather_graph_wrapper'>
-          <h2>Température des prochains jours</h2>
           <input
+            className="searchBar"
             type="text"
             placeholder="Recherchez une ville..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
+      <div className="main_rapper">
+     
+        <div className='weather_graph_wrapper'>
+          <h2>Température des prochains jours</h2>
+          
 
           {error && <p style={{ color: 'red' }}>{error.message}</p>}
 
           {chartData.length > 0 ? (
             <LineChart
+              className='weather_graph'
               xAxis={[{
                 data: dates,
                 tickNumber: 2,
@@ -144,7 +148,6 @@ function ProPage() {
                     return value; 
                   }
                 },
-
               }]}
               series={chartData.map((serie) => (
                 console.log(dates), {
