@@ -59,8 +59,16 @@
   padding-top: 3%;
 }
 
+.searchBar {
+  width: 50% !important;
+}
+
+.weather_graph {
+  width: 85% !important;
+}
+
 .sunset_graph {
-  margin-left: 10%;
+  margin-top: 10%;
   width: 30%;
   height: fit-content;
   border: solid #003366;
