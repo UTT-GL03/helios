@@ -60,7 +60,8 @@
 }
 
 .searchBar {
-  width: 50% !important;
+  width: 70% !important;
+  margin-top: 25px;
 }
 
 .weather_graph {

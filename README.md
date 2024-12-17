@@ -273,3 +273,6 @@ Maintenant que nous avons choisi notre package, nous développons les features e
 
 ![](./benchmark/ProPage.png)
 __Fig.13__ : Page pro + finalisée
+
+## TODO: Ce qu'on a appris, bonnes pratiques, etc
+## TODO: Perspectives

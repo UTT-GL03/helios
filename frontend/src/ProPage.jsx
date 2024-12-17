@@ -9,7 +9,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 function ProPage() {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState('Manchester');
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [chartData, setChartData] = useState([]);
