@@ -17,7 +17,7 @@ Météo France est un établissement public à caractère administratif ([source
 
 ## Effets de la numérisation
 
-L'histoire des prévisions météoroligiques est relativement jeune et connait son avènement avec l'informatique et les satellites. Avant le Web c'est via la presse écrite et la radio que les prévisions étaient communiquées.
+L'histoire des prévisions météorologiques est relativement jeune et connait son avènement avec l'informatique et les satellites. Avant le Web c'est via la presse écrite et la radio que les prévisions étaient communiquées.
 Désormais c'est via des applications mobiles principalement qu'elle est diffusée. On en comptait plus de 10 000 en 2023 et ce nombre ne va cesser d'augmenter. Cependant l'énorme majorité des services se basent uniquement sur l'un des cinq modèles ouverts suivants :
 
 - Modèle européen ECMWF,
@@ -37,7 +37,7 @@ L'impact écologique de cette substitution du papier et de la radio par les appl
 Notre premier axe de travail sera dirigé autour des publicités du site de météo france. En effet, le site contient de nombreuses images et vidéos provenant de publicité ainsi que des "pop-ups". Pour réduire l'impact écologique de la page, mais aussi réduire le temps de chargement, il nous paraît pertinent de les supprimer pour obtenir une page plus épurée. 
 Dans un second temps, nous souhaitons également enlever la grande majorité des articles en fin de page. Sur la page d'accueil du site, la seconde partie est uniquement constituée d'articles avec une image ou vidéo pour le présenter. Toujours dans la même optique, nous souhaitons rendre la page plus pertinente et moins énergivore en ne laissant qu'un article. De ce fait, l'utilisateur aura plus de chances également de s'intéresser s'il n'est pas submergé par la quantité. 
 Toujours pour les mêmes raisons, nous allons remplacer la carte de france qui est l'élément central de la page. Il sera possible par exemple de la remplacer par un tableau des températures et conditions météorologiques tout au long de la journée.
-Enfin, l'application se doit également d'être accessible et pertinente pour le plus grand nombre. Ainsi, nous ajouterons une partie professionnelle, notamment avec la météo agricole pour les utilisateurs qui auront besoin d'informations complémentaires et plus précises pour centraliser les informations dans un même endroit.
+Enfin, l'application se doit également d'être accessible et pertinente pour le plus grand nombre. Ainsi, nous ajouterons une partie professionnelle, notamment avec la météo agricole, pour les utilisateurs qui auront besoin d'informations complémentaires et plus précises pour centraliser les informations dans un même endroit.
 
 
 ## Scénario 1 : Consulter la météo
@@ -61,7 +61,7 @@ L'EcoIndex d'une page (de A à G) est calculé (sources : [EcoIndex](https://www
 - le poids des téléchargements,
 - le nombre d'éléments du document.
 
-Nous avons choisi de comparer l'impact des scénarios sur les services de quotidiens nationaux de diverses sensibilités politiques, économiques et environementales :
+Nous avons choisi de comparer l'impact des scénarios sur les services des établissements de météorologie et de climatologie :
 
 - Météo France,
 - Yr,
@@ -72,10 +72,10 @@ Les résultats sont les suivants (attention, d'une journée à l'autre, on peut 
 - Scénario "[Consulter la météo de ma région](https://htmlpreview.github.io/?https://raw.githubusercontent.com/UTT-GL03/helios/main/benchmark/consulterMeteo/results.html)",
 - Scénario "[Lire des articles parmi les articles de la page d'accueil](https://htmlpreview.github.io/?https://raw.githubusercontent.com/UTT-GL03/helios/main/benchmark/scenarioArticle/benchmark_.html)".
 
-Les résultats de performance sont assez différents entre Météo France, Yr et la Météo Agricole. Météo France et la Météo Agricole ont beaucoup de pubs et de cookies qui alourdissent la page et augmente le réseau nécessaire.
+Les résultats de performance sont assez différents entre Météo France, Yr et la Météo Agricole. Météo France et la Météo Agricole ont beaucoup de pubs qui alourdissent la page et augmente le réseau nécessaire.
 
 On peut aussi noter le nombre de requêtes nécessaires. Par exemple, pour charger la page d'accueil Meteo France il faut 75 requêtes HTTP. Cela confirme bien notre volonté de réduction du nombre d'articles et des images associées.
-À noter que les différents résultats qu'ils soient la taille du DOM ou encore la taille de la page sont directement en corrélation avec les axes d'améliorations que nous avions envisagés. En effet, Meteofrance qui possède la carte de la France, les articles, et des vidéos possède le score le moins bon. Les deux autres sites testés respectent la même logique : moins il y a de features interactives et gourmandes en ressources,  meilleur est le score d'ecoIndex.
+À noter que les différents résultats qu'ils soient la taille du DOM ou encore la taille de la page sont directement en corrélation avec les axes d'amélioration que nous avions envisagés. En effet, Meteo France qui possède la carte de la France, les articles, et des vidéos possède le score le moins bon. Les deux autres sites testés respectent la même logique : moins il y a de fonctionnalités interactives et gourmandes en ressources,  meilleur est le score d'ecoIndex.
 
 ## Maquette de l'interface et échantillon de données
 
@@ -93,8 +93,8 @@ __Fig.1__: Maquette de l'interface d'accueil du prototype
 __Fig.2__: Maquette de l'interface pro du prototype
 
 
-Pour des raisons de respect des droits d'auteurs, nous utilisons des données générées (avec [`dummy-json`](https://dummyjson.com)).
-Bien que fictives, ces données correspondent à la structure des services concurrents : 3 villes comportant la météo pour chacun (température, vent, météo) sur 7 jours (voir [modèle de données](./frontend/sample_data.hbs)). 
+Afin d'avoir la main sur la quantité et le format des données, nous utilisons des données générées (avec [`dummy-json`](https://dummyjson.com)).
+Bien que fictives, ces données correspondent à la structure des services concurrents : 3 villes comportant la météo pour chacun (température, vent, météo) sur 7 jours (voir [modèle de données](https://github.com/UTT-GL03/helios/blob/3c02c9fb3d378cf3bdf2ac456df52071a3bf6478/frontend/sample_data.hbs)). 
 
 
 ## Prototype n°1 : Fonctionnalités pour le scénario prioritaire avec données statiques
@@ -111,17 +111,17 @@ Ce scénario nécessite de pouvoir naviguer sur la page principale qui contient 
 Nous avons donc développé la page d'accueil pour qu'elle affiche un échantillon de données météo sous la forme d'un tableau, comme prévu par la maquette. Elle affiche la météo du jour pour 3 villes si aucune recherche n'est faite (cf. Fig. 3) et affiche la météo de la semaine si l'utilisateur recherche une ville en particulier (cf. Fig. 4)
 
 ![Maquette de la page pro](./wireframe/mainPage.png)
-__Fig.3__: Prototype de la page principal 
+__Fig.3__: Prototype de la page principale
 
 ![Maquette de la page pro](./wireframe/mainPageResearch.png)
-__Fig.4__: Prototype de la page principal avec une recherche
+__Fig.4__: Prototype de la page principale avec une recherche
 
 Pour l'instant, nous avons choisi le framework de mise en page minimaliste (PicoCSS). Dans la suite du projet, nous verrons si l'impact environnemental du passage à un framework de mise en page plus puissant (comme Bootstrap ou Tailwind) est acceptable.
 
 Nous avons choisi une librairie qui permet l'import d'icones pour afficher de manière plus ludique la météo. Par la suite, nous étudierons l'impact de l'utilisation d'une librairie par rapport à l'import des fichiers .svg dans le projet.
 
 Nous avons décidé, contrairement à l'ensemble des services concurrents, de ne pas surcharger la page d'informations, d'articles ou encore d'une carte interactive qui nécessite beaucoup de ressource. 
-Si de telles fonctionnalités devaient être introduites, il faudrait mettre en balance leurs utilités et leurs impacts a priori important.
+Si de telles fonctionnalités devaient être introduites, il faudrait mettre en balance leur utilité et leurs impacts a priori important.
 
 Dans l'état actuel du prototype, il est possible d'avoir une première idée de l'impact environnemental du frontend. Bien entendu, il manque encore le chargement dynamique des données, mais nous pouvons déjà évaluer l'impact de l'affichage des données et du framework (au sens large : React, PicoCSS, DayJS). Cette évaluation de l'impact (cf. Tab.1) est déjà encourageante en mode "développement" mais encore plus en mode "pré-production". Nous mesurons ici l'effet positif de l'adoption d'outils de développement Web intégrant la ["minification"](https://fr.wikipedia.org/wiki/Minification) (cf. *Wikipédia*) du code et la concaténation du code d'une part et des feuilles de style d'autre part.
 
@@ -130,7 +130,7 @@ Dans l'état actuel du prototype, il est possible d'avoir une première idée de
 |   | EcoIndex| GES (gCO2e) | Taille du DOM | Requêtes | Taille de la page (ko)
 |---|--------:|------------:|--------------:|---------:|---------------------:
 | Mode "développement"  | 76 B🟢 |  1,4 | 64 | 24 | 4609
-| Mode "pré-production" | 93 A🟢 | 1,14 | 61 | 4 | 76 
+| Mode "pré-production" | 93 A🟢 | 1,1 | 61 | 4 | 76 
 
 __Tab.1__: Évaluation de l'impact du prototype de la page d'accueil.
 
@@ -141,9 +141,9 @@ Avec l'ajout de ce modèle de page et la mise en place de la navigation entre le
 
 |   | EcoIndex| GES (gCO2e) | Taille du DOM | Requêtes | Taille de la page (ko)
 |---|--------:|------------:|--------------:|---------:|---------------------:
-| 1. Consulter la météo des villes de l'accueil 					   | 93 A🟢 |  1,14 | 61 | 4 | 76
-| 2. rechercher  une ville			   | 91 A🟢 | 1,77 | 97 | 4 | 102
-| 3. Revenir à l'accueil | 91 A🟢 | 1,77 | 97 | 4 | 102
+| 1. Consulter la météo des villes de l'accueil 					   | 93 A🟢 |  1,2 | 61 | 4 | 76
+| 2. rechercher  une ville			   | 91 A🟢 | 1,1 | 97 | 4 | 102
+| 3. Revenir à l'accueil | 91 A🟢 | 1,1 | 97 | 4 | 102
 
 
 __Tab.2__: Évaluation de l'impact du scénario "rechercher la météo d'une ville" dans le prototype n°1.
@@ -158,7 +158,7 @@ Concernant l'évaluation de l'impact environemental du scénario, par rapport au
 D'ailleurs, à partir de cette version, et à moins de changements profonds, l'EcoIndex ne devrait plus évoluer de manière significative.
 Nous utiliserons désormais un autre logiciel, *GreenFrame*, qui évalue non pas l'impact "environné" de la consultation (incorporant une participation au cycle de vie du terminal) mais celui de la consultation proprement dite (cf. Tab.3) et de manière beaucoup plus fiable à partir des statistiques d'utilisation des ressources physiques (CPU, mémoire, réseau, disque).
 
-| | Impact de la consultation de la météo
+| | Impact de la consultation de la météo (mg CO2e)
 |--------------|----:
 | Meteo France | 302         
 | Meteo Blue   | 183
@@ -166,7 +166,7 @@ Nous utiliserons désormais un autre logiciel, *GreenFrame*, qui évalue non pas
 | Yr           | 41          
 | __HELIOS__ | __31__
 
-__Tab.3__ : Impact en mg CO2e de la consultation proprement dite des pages des services existants et de notre prototype.
+__Tab.3__ : Impact de la consultation des pages des services existants et de notre prototype.
 
 Pour les services existants, sur le graphique présentant l'utilisation dans le temps des ressources (cf. Fig.4), on constate d'autres pics que le pic initial, probablement associés au chargement et à l'affichage de contenus multimédias et de publicités, ou causés par des techniques de pistage sur le Web.
 
@@ -184,7 +184,7 @@ __Fig.6__ : Consommation de ressources par le navigateur lors de la consultation
 ## Prototype n°3 : Fonctionnalités pour le scénario prioritaire avec données stockées dans une base de données
 
 Pour la troisième version du prototype, les données sont désormais stockées dans un système de base de données interrogeable à travers une API Web (*CouchDB*).
-L'intérêt d'une source de données dynamique est d'une part, à terme, de pouvoir ajouter ou modifier la météo plus facilement, et d'autre part de déporter sur le serveur le filtrage des données pertinentes.
+L'intérêt d'une source de données dynamique est d'une part, à terme, de pouvoir ajouter ou modifier les prévisions météorologiques plus facilement, et d'autre part de déporter sur le serveur le filtrage des données pertinentes.
 
 Sur ce deuxième enjeu, on observe  dans les mesures (cf. Fig.7) que la charge du réseau entre les deux prototypes concernant la consultation de la météo est sensiblement la même. Ceci est dû à la simplicité de notre application qui ne contient qu'une page à charger. Néanmoins, en supposant que notre application contiendra à terme plusieurs pages et d'autres lots de données, on peut s'attendre à une baisse de la charge du réseau pour l'aff
 
@@ -192,7 +192,6 @@ Sur ce deuxième enjeu, on observe  dans les mesures (cf. Fig.7) que la charge d
 ![](./benchmark/helios_v3.png)
 __Fig.7__ : Comparaison de l'impact de la consultation de la page de la météo entre les prototypes 2 (en haut) et (3 en bas).
 
-De plus, on peut constater une utilisation du CPU par la base de données, utilisation qui semble par ailleurs continue et plus important qu'auparavant. (cf. Fig.8).
 
 ![](./benchmark/helios_backend_v3.png)
 __Fig.8__ : Profil dans le temps de l'impact de la base de données lors de la consultation de la météo.
@@ -264,15 +263,33 @@ __Fig.12__ : Comparaison de l'impact de la page principale optimisée avec la pa
 
 ## Prototype n°6 : Ajout de la page professionnel 
 
-Dans un premier temps, nous avons étudié le choix de la dépendance que nous allions utiliser pour afficher les graphiques liés à la page pro. Les deux choix étaient MuiChart et chart.js, pour comparer leur impact sur l'application, nous avons utilisé les deux dépendances pour afficher un graphique et ensuite comparées leur impact via GreenFrame. En comparant les deux résultats (cf. Fig. 13) nous constatons que MuiChart à un impact moindre comparé à chart.js. Nous avons donc décidé d'utiliser Mui Chart pour la conception des features de la page professionnelle.
+Dans un premier temps, nous avons étudié le choix de la dépendance que nous allions utiliser pour afficher les graphiques de la page pro. Les deux dépendances sélectionnées étaient MuiChart et chart.js. Pour comparer leur impact sur l'application, nous avons utilisé les deux dépendances pour afficher un graphique et nous avons ensuite comparé leur impact via GreenFrame. En comparant les deux résultats (cf. Fig. 13) nous constatons que MuiChart à un impact moindre comparé à chart.js. Nous avons donc décidé d'utiliser MuiChart pour la conception des fonctionnalités de la page professionnelle.
 
 ![](./benchmark/comparison_package.png)
 __Fig.13__ : Comparaison de l'impact des deux packages sur la page pro
 
-Maintenant que nous avons choisi notre package, nous développons les features et la page pro. Comme énoncé au début de notre projet, la page pro est ici utilisé par les professionnelles ayant besoin de plus de détail sur la météo. Pour ce faire nous avons ajouté un graphique de l'évolution de la météo au fil des jours de la semaine avec 3 températures (matin, après-midi et soir). Nous avons également un éphéméride en plus(cf. Fig. 14)
+Une fois le package choisi, nous nous sommes attelés à développer les fonctionnalités et la page pro. Comme énoncé au début de notre projet, la page pro est utilisée par les professionnel(le)s ayant besoin de plus de détails sur la météo. Pour ce faire, nous avons ajouté un graphique de l'évolution de la météo au fil des jours de la semaine avec 3 températures (matin, après-midi et soir). Nous avons également ajouté un éphéméride (cf. Fig. 14).
 
 ![](./benchmark/ProPage.png)
 __Fig.13__ : Page pro + finalisée
 
-## TODO: Ce qu'on a appris, bonnes pratiques, etc
-## TODO: Perspectives
+## Ce qu'on a appris, bonnes pratiques, etc
+
+Dans un premier temps, nous avons appris différentes pratiques importantes pour l'analyse de l'impact des applications et services.
+La première démarche consiste à comparer notre futur service avec d'autres déjà présents. Cela aide à obtenir un premier aperçu de la consommation de ce genre de service. Ensuite, cela permet d'observer les premières lignes d'amélioration que l'on peut prendre en compte lors de la conception du projet. 
+
+Une seconde méthode importante est la mesure de l'impact de notre application, notamment durant le développement. Cela peut passer par la création d'un script automatisant les tests du code lors de chaque commit. Cette implémentation est primordiale pour, d'une part avoir une vision claire de l'évolution de la consommation de notre application, et d'autre part de pouvoir comparer plusieurs implémentations et leur poids dans le service. 
+
+Nous avons également vu les facteurs impactant le plus la consommation de notre site. Le premier est l'utilisation de publicités qui est le facteur premier dans la grande consommation des services existants. Un second facteur est le type d'utilisation des données, leur optimisation et les filtres établis lors de leur utilisation. 
+Effectivement, restreindre la collecte des informations aux plus pertinentes à chaque phase de l'utilisation du service permet une maîtrise de la consommation et réduit considérablement les ressources consacrées à ces informations, surtout compte tenu du volume considérable de données disponibles. 
+
+Pour conclure, il est crucial d'adopter des dépendances pertinentes et frugales. En effet, une consommation excessive de ressources affecte le reste des résultats de notre service lorsqu'on analyse son impact sur l'environnement. Le comparatif des dépendances est notamment simplifié par la mise en place des scripts d'analyse précédemment mentionnée.
+
+
+## Perspectives
+
+Dans l'hypothèse où nous pourrions continuer à travailler sur notre site, nous envisageons plusieurs possibilités : 
+
+    - Limitation des données de météo à une semaine car 3 jours peut potentiellement être trop peu
+    - De nouvelles fonctionnalités dans la page pro pour plus de pertinence. Il peut s'agir de l'ajout des moyennes de saison, de la direction et force du vent ou encore des précipitations en mm
+    - Un article modifié chaque jour pour informer sur la météo et sensibiliser aux sujets environnementaux 
